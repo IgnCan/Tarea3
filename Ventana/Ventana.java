@@ -70,6 +70,8 @@ public class Ventana extends JFrame {
         monedas.add(mon1000,gbc);
         mon1000.setPreferredSize(buttonSize);
 
+
+
     }
 
 }
