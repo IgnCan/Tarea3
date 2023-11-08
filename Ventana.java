@@ -40,7 +40,7 @@ public class Ventana extends JFrame {
         comprador.setPreferredSize(new Dimension(300, 400));
 
         //Aca se crea cada jBoton
-        JButton mon100 = new Boton100peso(comprador);
+        JButton mon100 = new Boton100peso();
         JButton mon500 = new Boton500peso();
         JButton mon1000 = new Boton1000peso();
 

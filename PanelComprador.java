@@ -40,8 +40,4 @@ public class PanelComprador extends JPanel {
         add(label3,labelConstraints);
     }
 
-    public void setTexto(String a){
-        label.setText(a);
-
-    }
 }

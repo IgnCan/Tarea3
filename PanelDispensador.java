@@ -8,55 +8,64 @@ public class PanelDispensador extends JPanel {
         super();
         setBackground(Color.PINK);
         JPanel p1=new JPanel();
-        JPanel p2=new JPanel();
-        JPanel p3=new JPanel();
-        JPanel p4=new JPanel();
-        
 
+        JLabel label= new JLabel("LabelCoca");
 
         JButton botoncoca = new JButton("Cocacola");
-        p1.add(botoncoca);
+        //p1.add(botoncoca);
         botoncoca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Acción a realizar cuando se hace clic en el botón
+//                label.setText("");
                 System.out.println("CocaCola");
-                repaint();
+//                repaint();
             }
         });
 
+        JLabel label2= new JLabel("LabelSprite");
+
         JButton botonsprite = new JButton("Sprite");
-        p1.add(botonsprite);
+        //p1.add(botonsprite);
         botonsprite.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Acción a realizar cuando se hace clic en el botón
+                JLabel label2= new JLabel("LabelCoca");
                 System.out.println("Sprite");
                 repaint();
             }
         });
 
+        JLabel label3= new JLabel("LabelFanta");
+
         JButton botonfanta = new JButton("Fanta");
-        p1.add(botonfanta);
+        //p1.add(botonfanta);
         botonfanta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Acción a realizar cuando se hace clic en el botón
+                JLabel label3= new JLabel("LabelCoca");
                 System.out.println("Fanta");
                 repaint();
             }
         });
 
+        JLabel label4= new JLabel("LabelSpuer8");
+
         JButton botonsuper8 = new JButton("Super8");
-        p1.add(botonsuper8);
+        //p1.add(botonsuper8);
         botonsuper8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Acción a realizar cuando se hace clic en el botón
+                JLabel label4= new JLabel("LabelCoca");
                 System.out.println("Super8");
                 repaint();
             }
         });
+
+         JLabel label5= new JLabel("LabelSnikers");
 
         JButton botonsnikers = new JButton("Snikers");
         p1.add(botonsnikers);
@@ -64,10 +73,14 @@ public class PanelDispensador extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Acción a realizar cuando se hace clic en el botón
+                JLabel label5= new JLabel("LabelCoca");
                 System.out.println("Snikers");
                 repaint();
             }
         });
+
+
+
         JButton Comprar= new JButton("Comprar");
         add(Comprar);
         botonsnikers.addActionListener(new ActionListener() {
@@ -81,15 +94,16 @@ public class PanelDispensador extends JPanel {
 
 
         //Aca defino una forma base para cada jBoton de 100x60
-        Dimension buttonSize = new Dimension(150, 100);
-        Dimension buttonSize2 = new Dimension(130, 50);
+        Dimension buttonSize = new Dimension(75, 50);
+        Dimension labelSize = new Dimension(30, 30);
+
 
 //        //Aca los organizo
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
         //Da un especiado de 10p entre cada boton
-        gbc.insets = new Insets(0, 0, 0, 50);
+        gbc.insets = new Insets(0, 0, 0, 10);
 
         gbc.gridx = 0; // Columna 0
 
@@ -116,7 +130,7 @@ public class PanelDispensador extends JPanel {
         gbc.gridx = 1; // Columna 1
         gbc.gridy = 3; // Fila 4
         add(Comprar,gbc);
-        Comprar.setPreferredSize(buttonSize2);
+        Comprar.setPreferredSize(buttonSize);
 
     }
 }
