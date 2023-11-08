@@ -1,5 +1,3 @@
-package Ventana;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -18,7 +16,7 @@ public class Ventana extends JFrame {
         PanelesYBotones();
     }
 
-    private void PanelesYBotones(){
+    public void PanelesYBotones(){
         //Crea el panel
         setLayout(new BorderLayout());
 
@@ -69,7 +67,6 @@ public class Ventana extends JFrame {
         gbc.gridy = 2; // Fila 2
         monedas.add(mon1000,gbc);
         mon1000.setPreferredSize(buttonSize);
-
 
 
     }
