@@ -9,8 +9,9 @@ public class PanelDispensador extends JPanel {
         setBackground(Color.PINK);
         JPanel p1=new JPanel();
         JPanel p2=new JPanel();
-
-        p1.setLayout(new GridLayout(5,1));
+        JPanel p3=new JPanel();
+        JPanel p4=new JPanel();
+        
 
 
         JButton botoncoca = new JButton("Cocacola");
@@ -79,36 +80,43 @@ public class PanelDispensador extends JPanel {
         });
 
 
-//        //Aca defino una forma base para cada jBoton (cuadrado de 100x100)
-//        Dimension buttonSize = new Dimension(70, 70);
-//
+        //Aca defino una forma base para cada jBoton de 100x60
+        Dimension buttonSize = new Dimension(150, 100);
+        Dimension buttonSize2 = new Dimension(130, 50);
+
 //        //Aca los organizo
-//        p1.setLayout(new GridBagLayout());
-//        GridBagConstraints gbc = new GridBagConstraints();
-//
-//        //Da un especiado de 10p entre cada boton
-//        gbc.insets = new Insets(50, 0, 0, 0);
-//
-//        gbc.gridx = 0; // Columna 0
-//
-//        gbc.gridy = 0; // Fila 0
-//        p1.add(botoncoca,gbc);
-//        botoncoca.setPreferredSize(buttonSize);
-//
-//        gbc.gridy = 1; // Fila 1
-//        p1.add(botonsprite,gbc);
-//        botonsprite.setPreferredSize(buttonSize);
-//
-//        gbc.gridy = 2; // Fila 2
-//        p1.add(botonfanta,gbc);
-//        botonfanta.setPreferredSize(buttonSize);
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
-//        gbc.gridy = 3; // Fila 3
-//        p1.add(botonsuper8,gbc);
-//        botonsuper8.setPreferredSize(buttonSize);
+        //Da un especiado de 10p entre cada boton
+        gbc.insets = new Insets(0, 0, 0, 50);
 
-//        gbc.gridy = 2; // Fila 2
-//        p1.add(botonfanta,gbc);
-//        botonfanta.setPreferredSize(buttonSize);
+        gbc.gridx = 0; // Columna 0
+
+        gbc.gridy = 1; // Fila 0
+        add(botoncoca,gbc);
+        botoncoca.setPreferredSize(buttonSize);
+
+        gbc.gridy = 2; // Fila 1
+        add(botonsprite,gbc);
+        botonsprite.setPreferredSize(buttonSize);
+
+        gbc.gridy = 3; // Fila 2
+        add(botonfanta,gbc);
+        botonfanta.setPreferredSize(buttonSize);
+
+        gbc.gridy = 4; // Fila 3
+        add(botonsuper8,gbc);
+        botonsuper8.setPreferredSize(buttonSize);
+
+        gbc.gridy = 5; // Fila 4
+        add(botonsnikers,gbc);
+        botonsnikers.setPreferredSize(buttonSize);
+
+        gbc.gridx = 1; // Columna 1
+        gbc.gridy = 3; // Fila 4
+        add(Comprar,gbc);
+        Comprar.setPreferredSize(buttonSize2);
+
     }
 }
