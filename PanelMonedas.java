@@ -68,10 +68,11 @@ public class PanelMonedas extends JPanel {
 
 
     }
-
     public Moneda getM() {
         return m;
     }
+
+
     //    public class Boton100peso extends JButton {
 //
 //        public Boton100peso() {
