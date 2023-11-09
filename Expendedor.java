@@ -57,7 +57,8 @@ class Expendedor{
         if(m==null){
             throw new PagoIncorrectoException();
         }
-        switch (prod) {
+        int produ=prod/10000;
+        switch (produ) {
             case 1: {
 
                 if (m.getValor() >= product.COCA.getPresio() && coca.chequear() != 0) {
