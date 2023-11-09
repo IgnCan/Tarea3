@@ -15,7 +15,8 @@ class Comprador{
                     break;
                 }
             }
-            compraBuena=compra;
+//            compraBuena=exp.getProducto();
+//            sonido=compraBuena.bebercomer();
             sonido=compra.bebercomer();
         } catch (NoHayProductoException a){
             while (true) {
