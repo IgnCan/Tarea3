@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Ventana extends JFrame {
-    Comprador c = null;
+
 
     public Ventana(){
 //      Esto indica el ancho y largo respectivamente, recibe dos int

@@ -44,4 +44,8 @@ public class PanelComprador extends JPanel {
         add(label3,labelConstraints);
     }
 
+//    public void recibirObjeto(Moneda monEnviada) {
+//        MonEnDisp=monEnviada;
+//        System.out.println("Objeto recibido en Dispensador: " + MonEnDisp.getValor());
+//    }
 }

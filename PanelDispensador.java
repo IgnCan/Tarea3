@@ -45,7 +45,6 @@ public class PanelDispensador extends JPanel {
                 } catch (PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
-
             }
         });
         botonsprite.addActionListener(new ActionListener() {
