@@ -1,8 +1,16 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Ventana extends JFrame {
+
+    Expendedor exp = new Expendedor(1);
+    Moneda m = null;
+    Comprador c = null;
+
+
     public Ventana(){
 //      Esto indica el ancho y largo respectivamente, recibe dos int
         this.setSize(1000,800);
@@ -40,33 +48,8 @@ public class Ventana extends JFrame {
         dispensador.setPreferredSize(new Dimension(400, 400));
         comprador.setPreferredSize(new Dimension(300, 400));
 
-        //Aca se crea cada jBoton
-        JButton mon100 = new Boton100peso();
-        JButton mon500 = new Boton500peso();
-        JButton mon1000 = new Boton1000peso();
 
-        //Aca defino una forma base para cada jBoton (cuadrado de 100x100)
-        Dimension buttonSize = new Dimension(100, 100);
-
-        //Aca los organizo
-        monedas.setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-
-        //Da un especiado de 10p entre cada boton
-        gbc.insets = new Insets(50, 0, 0, 0);
-
-        gbc.gridx = 0; // Columna 0
-
-        gbc.gridy = 0; // Fila 0
-        monedas.add(mon100,gbc);
-        mon100.setPreferredSize(buttonSize);
-
-        gbc.gridy = 1; // Fila 1
-        monedas.add(mon500,gbc);
-        mon500.setPreferredSize(buttonSize);
-
-        gbc.gridy = 2; // Fila 2
-        monedas.add(mon1000,gbc);
-        mon1000.setPreferredSize(buttonSize);
     }
+
+
 }
