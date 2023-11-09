@@ -219,3 +219,14 @@ public class PanelDispensador extends JPanel  {
 
 
 }
+
+//    Buenas tardes:
+//
+//        Le escribo para consultar respecto al atrazo en la entrega de la tarea n3
+//        hemos estado muy ocupados con tareas importantes en la malla curricular
+//        (Calculo 4, Optimizacion2, Mecanica de materiales) y no hemos podido dedicar
+//          el tiempo que se necesita para poder terminar la tarea
+// por lo que quisieramos poder atrasarnos hasta el domingo o sabado en la tarde sin el riesgo de
+// NCR para poder entregar una tarea de calidad y poder tener el promedio de tareas necesario para aprobar la asignatura.
+//
+//        pipipipi ,
