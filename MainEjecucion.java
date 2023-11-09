@@ -12,7 +12,7 @@ public class MainEjecucion {
 
         // caso, espendedor valido y..
         Expendedor exp = new Expendedor(1);
-        Moneda m = null;
+        Moneda d = null;
         Comprador c = null;
 
 
@@ -22,15 +22,15 @@ public class MainEjecucion {
 //            System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
         //moneda valida, sobra plata
-//            m = new Moneda500();
-//            c = new Comprador(m, 1, exp);
-//            System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
+            d = new Moneda500();
+            c = new Comprador(d, 1, exp);
+            System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
         //moneda valida, poca plata (Sprite,2000) [PagoInsuficienteException, null, 1000]
-        m = new Moneda1000();
-        c = new Comprador(m, 2, exp);
-        System.out.println(c.queBebiste());
-        System.out.println(c.cuantoVuelto());
+//        m = new Moneda1000();
+//        c = new Comprador(m, 2, exp);
+//        System.out.println(c.queBebiste());
+//        System.out.println(c.cuantoVuelto());
 
         // moneda valida, precio justo (snikers, 500) [snikers, 0]
 //            m = new Moneda500();
