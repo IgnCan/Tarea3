@@ -1,14 +1,9 @@
-// hare pruebas de ejecucion aca en lo que aprendo junit
+
 public class MainEjecucion {
 
-    // Cosas importantes wue faltan:
-    // * que devuelva la moneda directamente cuando no pueda comprar (que no la sencille)
-    // * agregar excepciones ())
-    // - que excepciones devuelvan la plata (y españa el oro)
 
     public static void main(String[] args) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
 
-        // try y catch van aca por pauta
 
         // caso, espendedor valido y..
         Expendedor exp = new Expendedor(1);
