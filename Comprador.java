@@ -1,7 +1,7 @@
 class Comprador{
     private String sonido;
     private int vuelto;
-
+    private Producto compraBuena = null;
 
     public Comprador(Moneda m, int queProducto, Expendedor exp)
             throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
@@ -15,6 +15,7 @@ class Comprador{
                     break;
                 }
             }
+            compraBuena=compra;
             sonido=compra.bebercomer();
         } catch (NoHayProductoException a){
             while (true) {
@@ -52,6 +53,10 @@ class Comprador{
 
     public String queBebiste(){
         return sonido;
+    }
+
+    public Producto queCompra(){
+        return compraBuena;
     }
 
 }

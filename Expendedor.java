@@ -7,6 +7,9 @@ class Expendedor{
     private Deposito<Dulce> super8= new Deposito<>();
     private Deposito<Dulce> snikers= new Deposito<>();
     private Deposito<Moneda> monVu= new Deposito<>();
+    private Deposito<Moneda> monCompra = new Deposito<>();
+    private Deposito<Producto> DepProd = new Deposito<>();
+    private Producto compraBuena = null;
 
     public enum product{
         COCA(1,300),
@@ -32,7 +35,6 @@ class Expendedor{
             return id;
         }
     }
-
 
     private int numbeb;
 
@@ -60,10 +62,11 @@ class Expendedor{
             case 1: {
 
                 if (m.getValor() >= product.COCA.getPresio() && coca.chequear() != 0) {
+                    monCompra.add(m);
                     for (int i = 1; i <= (m.getValor() - product.COCA.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
-                    return coca.get();
+                    return coca.get(), ;
 
                 } else if (coca.chequear()==0) {
                     monVu.add(m);
@@ -77,6 +80,7 @@ class Expendedor{
             }
             case 2: {
                 if (m.getValor() >= product.SPRITE.getPresio() && sprite.chequear() != 0) {
+                    monCompra.add(m);
                     for (int i = 1; i <= (m.getValor() - product.SPRITE.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
@@ -93,6 +97,7 @@ class Expendedor{
             }
             case 3: {
                 if (m.getValor() >= product.FANTA.getPresio() && fanta.chequear() != 0) {
+                    monCompra.add(m);
                     for (int i = 1; i <= (m.getValor() - product.FANTA.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
@@ -109,6 +114,7 @@ class Expendedor{
             }
             case 4: {
                 if (m.getValor() >= product.SUPER8.getPresio() && super8.chequear() != 0) {
+                    monCompra.add(m);
                     for (int i = 1; i <= (m.getValor() - product.SUPER8.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
@@ -124,6 +130,7 @@ class Expendedor{
             }
             case 5: {
                 if (m.getValor() >= product.SNIKERS.getPresio() && snikers.chequear() != 0) {
+                    monCompra.add(m);
                     for (int i = 1; i <= (m.getValor() - product.SNIKERS.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
@@ -142,7 +149,6 @@ class Expendedor{
             default: {
                 monVu.add(m);
                 throw new NoHayProductoException("NoHayProductoException, No queda producto, o n invalido");
-                //return null;
             }
 
         }
@@ -152,6 +158,7 @@ class Expendedor{
     public Moneda getVuelto(){
         return monVu.get();
     }
+
 
     public int cocaTamaño(){
         return coca.chequear();

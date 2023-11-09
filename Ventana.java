@@ -6,10 +6,15 @@ import java.awt.event.ActionListener;
 
 public class Ventana extends JFrame {
 
+    PanelMonedas monedas = null;
+    PanelDispensador dispensador= null;
+    PanelComprador comprador = null;
 
-    public Ventana(){
-//      Esto indica el ancho y largo respectivamente, recibe dos int
-        this.setSize(1000,800);
+
+
+    public Ventana() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+        //      Esto indica el ancho y largo respectivamente, recibe dos int
+        this.setSize(1000, 800);
 
         //Al dejar esto en null centra el programa al abrirlo
         setLocationRelativeTo(null);
@@ -22,19 +27,33 @@ public class Ventana extends JFrame {
         //Crea el panel
         setLayout(new BorderLayout());
 
-        PanelDispensador dispensador = new PanelDispensador();
+
+        dispensador = new PanelDispensador(comprador);
         this.getContentPane().add(dispensador);
 
-        PanelMonedas monedas = new PanelMonedas(dispensador);
+        monedas = new PanelMonedas(dispensador);
         this.getContentPane().add(monedas);
 
-        PanelComprador comprador = new PanelComprador();
+        comprador = new PanelComprador();
         this.getContentPane().add(comprador);
 
+
+
+
+
+//        PanelDispensador dispensador = new PanelDispensador();
+//        this.getContentPane().add(dispensador);
+//
+//        PanelMonedas monedas = new PanelMonedas(dispensador);
+//        this.getContentPane().add(monedas);
+//
+//        PanelComprador comprador = new PanelComprador();
+//        this.getContentPane().add(comprador);
+
         // Establece las posiciones de los JPaneles
-        add(monedas,BorderLayout.WEST);
-        add(dispensador,BorderLayout.CENTER);
-        add(comprador,BorderLayout.EAST);
+        add(monedas, BorderLayout.WEST);
+        add(dispensador, BorderLayout.CENTER);
+        add(comprador, BorderLayout.EAST);
 
         //Establece el tamaño de los JPaneles
         monedas.setPreferredSize(new Dimension(300, 400));
