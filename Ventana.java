@@ -1,17 +1,15 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Ventana extends JFrame {
 
     Expendedor exp = new Expendedor(1);
-    Moneda m = null;
-    Comprador c = null;
+    //Moneda m = null;
+    //Comprador c = null;
 
 
-    public Ventana(){
+    public Ventana() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
 //      Esto indica el ancho y largo respectivamente, recibe dos int
         this.setSize(1000,800);
 
@@ -25,12 +23,13 @@ public class Ventana extends JFrame {
         Paneles();
     }
 
-    public void Paneles(){
+    public void Paneles() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         //Crea el panel
         setLayout(new BorderLayout());
 
         JPanel monedas = new PanelMonedas();
         this.getContentPane().add(monedas);
+
 
         JPanel dispensador = new PanelDispensador();
         this.getContentPane().add(dispensador);
@@ -47,6 +46,13 @@ public class Ventana extends JFrame {
         monedas.setPreferredSize(new Dimension(300, 400));
         dispensador.setPreferredSize(new Dimension(400, 400));
         comprador.setPreferredSize(new Dimension(300, 400));
+
+        setVisible(true);
+
+        Moneda a= ((PanelMonedas) monedas).getM();
+        //Producto aa= ((PanelDispensador) dispensador).getP();
+        ((PanelDispensador) dispensador).settA(a);
+
 
 
     }
