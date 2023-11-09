@@ -3,8 +3,9 @@ import java.awt.*;
 
 public class PanelComprador extends JPanel {
 
-    JLabel label= new JLabel("HOLA");
-    JLabel label3 = new JLabel("chao");
+    JLabel label= new JLabel("Aca va el producto");
+    JLabel label3 = new JLabel("Aca va el vuelto");
+
     public PanelComprador(){
         super();
         setBackground(Color.CYAN);
@@ -40,4 +41,8 @@ public class PanelComprador extends JPanel {
         add(label3,labelConstraints);
     }
 
+    public void setTexto1(String a){
+        label.setText(a);
+        repaint();
+    }
 }
