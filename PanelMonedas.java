@@ -8,11 +8,13 @@ public class PanelMonedas extends JPanel {
     public PanelMonedas(){
         super();
         setBackground(Color.DARK_GRAY);
+        Moneda m;
 
         //Aca se crea cada jBoton
         JButton mon100 = new JButton("$ 100");
         JButton mon500 = new JButton("$ 500");
         JButton mon1000 = new JButton("$ 1000");
+
 
         //Aca defino una forma base para cada jBoton (cuadrado de 100x100)
         Dimension buttonSize = new Dimension(100, 100);
@@ -37,7 +39,12 @@ public class PanelMonedas extends JPanel {
         gbc.gridy = 2; // Fila 2
         add(mon1000,gbc);
         mon1000.setPreferredSize(buttonSize);
+
+
+
     }
+
+
 
     public class Boton100peso extends JButton {
 
@@ -48,6 +55,7 @@ public class PanelMonedas extends JPanel {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     Moneda100 m = new Moneda100();
+
                     System.out.println(m.getValor());
 
                 }
