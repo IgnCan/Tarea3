@@ -4,7 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelDispensador extends JPanel {
-
+    Producto p;
+    int c=10000;
+    int sp=20000;
+    int f=30000;
+    int su=40000;
+    int sn=50000;
+    Moneda a;
+    Expendedor exp = new Expendedor(1);
     public PanelDispensador(){
         super();
         setBackground(Color.PINK);
@@ -27,30 +34,50 @@ public class PanelDispensador extends JPanel {
         botoncoca.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("CocaCola");
-
+                c=c+1;
+                p=new CocaCola(c);
             }
         });
         botonsprite.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Sprite");
+                sp=sp+1;
+                p=new Sprite(sp);
 
             }
         });
         botonfanta.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Fanta");
+                f=f+1;
+                p=new Fanta(f);
 
             }
         });
         botonsuper8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Super8");
+                su=su+1;
+                p=new Super8(su);
 
             }
         });
         botonsnikers.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Snikers");
+                sn=sn+1;
+                p=new Snikers(sn);
+                Comprador c= null;
+                try {
+                    c = new Comprador(a,sn, exp);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+                System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
             }
         });
@@ -138,5 +165,13 @@ public class PanelDispensador extends JPanel {
         add(vuelto,gbc);
         vuelto.setPreferredSize(buttonSize);
 
+    }
+
+    public Producto getP() {
+        return p;
+    }
+
+    public void settA(Moneda a) {
+        this.a = a;
     }
 }
