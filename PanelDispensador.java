@@ -4,6 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelDispensador extends JPanel {
+
+    Expendedor exp = new Expendedor(1);
+    Moneda m = null;
+    Comprador c = null;
+
+
     public PanelDispensador(){
         super();
         setBackground(Color.PINK);
