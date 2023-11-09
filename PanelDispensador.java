@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class PanelDispensador extends JPanel {
     Producto p;
-    int c=10000;
+    int cc=10000;
     int sp=20000;
     int f=30000;
     int su=40000;
@@ -34,8 +34,19 @@ public class PanelDispensador extends JPanel {
         botoncoca.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("CocaCola");
-                c=c+1;
-                p=new CocaCola(c);
+                cc=cc+1;
+                p=new CocaCola(cc);
+                Comprador c= null;
+                try {
+                    c = new Comprador(a,cc, exp);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+                System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
             }
         });
         botonsprite.addActionListener(new ActionListener() {
@@ -43,6 +54,17 @@ public class PanelDispensador extends JPanel {
                 System.out.println("Sprite");
                 sp=sp+1;
                 p=new Sprite(sp);
+                Comprador c= null;
+                try {
+                    c = new Comprador(a,sp, exp);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+                System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
             }
         });
@@ -51,6 +73,17 @@ public class PanelDispensador extends JPanel {
                 System.out.println("Fanta");
                 f=f+1;
                 p=new Fanta(f);
+                Comprador c= null;
+                try {
+                    c = new Comprador(a,f, exp);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+                System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
             }
         });
@@ -59,6 +92,17 @@ public class PanelDispensador extends JPanel {
                 System.out.println("Super8");
                 su=su+1;
                 p=new Super8(su);
+                Comprador c= null;
+                try {
+                    c = new Comprador(a,su, exp);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+                System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
             }
         });
