@@ -5,11 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Ventana extends JFrame {
-
-    Expendedor exp = new Expendedor(1);
-    Moneda m = null;
     Comprador c = null;
-
 
     public Ventana(){
 //      Esto indica el ancho y largo respectivamente, recibe dos int
@@ -22,20 +18,17 @@ public class Ventana extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setTitle("Bonito Dispensador :D (estoy cansado jefe)");
-        PanelesYBotones();
-    }
 
-    public void PanelesYBotones(){
         //Crea el panel
         setLayout(new BorderLayout());
 
-        JPanel monedas = new PanelMonedas();
-        this.getContentPane().add(monedas);
-
-        JPanel dispensador = new PanelDispensador();
+        PanelDispensador dispensador = new PanelDispensador();
         this.getContentPane().add(dispensador);
 
-        JPanel comprador = new PanelComprador();
+        PanelMonedas monedas = new PanelMonedas(dispensador);
+        this.getContentPane().add(monedas);
+
+        PanelComprador comprador = new PanelComprador();
         this.getContentPane().add(comprador);
 
         // Establece las posiciones de los JPaneles
@@ -50,6 +43,7 @@ public class Ventana extends JFrame {
 
 
     }
+
 
 
 }

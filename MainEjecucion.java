@@ -29,7 +29,8 @@ public class MainEjecucion {
         //moneda valida, poca plata (Sprite,2000) [PagoInsuficienteException, null, 1000]
         m = new Moneda1000();
         c = new Comprador(m, 2, exp);
-        System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
+        System.out.println(c.queBebiste());
+        System.out.println(c.cuantoVuelto());
 
         // moneda valida, precio justo (snikers, 500) [snikers, 0]
 //            m = new Moneda500();

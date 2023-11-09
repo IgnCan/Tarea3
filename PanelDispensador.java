@@ -4,11 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelDispensador extends JPanel {
+    private Expendedor exp = new Expendedor(1);
+    private Moneda MonEnDisp = null;
+    Comprador c = null;
+
     public PanelDispensador(){
         super();
         setBackground(Color.PINK);
 
-        JLabel label= new JLabel("LabelCoca");
+        JLabel label= new JLabel(String.valueOf(exp.cocaTamaño()));
         JButton botoncoca = new JButton("Cocacola");
         JLabel label2= new JLabel("LabelSprite");
         JButton botonsprite = new JButton("Sprite");
@@ -25,29 +29,84 @@ public class PanelDispensador extends JPanel {
 
         botoncoca.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("CocaCola");
+                System.out.println("Apretaste el boton");
+
+                try {
+                    c = new Comprador(MonEnDisp, 1, exp);
+                    System.out.println(c.queBebiste());
+                    label.setText(String.valueOf(exp.cocaTamaño()));
+//                    ActivarBotonesEvent event = new ActivarBotonesEvent(this);
+//                    Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(event);
+                    //PanelMonedas.Boton100peso.setEnabled(true);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+
             }
         });
         botonsprite.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Sprite");
+                try {
+                    c = new Comprador(MonEnDisp, 2, exp);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         botonfanta.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Fanta");
+                try {
+                    c = new Comprador(MonEnDisp, 3, exp);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         botonsuper8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Super8");
+                try {
+                    c = new Comprador(MonEnDisp, 4, exp);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         botonsnikers.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Snikers");
+                try {
+                    c = new Comprador(MonEnDisp, 5, exp);
+                    ActivarBotonesEvent event = new ActivarBotonesEvent(this);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
+
+
 
 
         //Aca defino una forma base para cada jBoton de 100x60
@@ -55,7 +114,7 @@ public class PanelDispensador extends JPanel {
         Dimension labelSize = new Dimension(30, 30);
 
 
-//        //Aca los organizo
+        //Aca los organizo
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
@@ -81,15 +140,15 @@ public class PanelDispensador extends JPanel {
 
         gbc.gridy = 1; // Fila 1
         add(label,gbc);
-        label.setPreferredSize(buttonSize);
+        label.setPreferredSize(labelSize);
 
         gbc.gridy = 2; // Fila 2
         add(label2,gbc);
-        label2.setPreferredSize(buttonSize);
+        label2.setPreferredSize(labelSize);
 
         gbc.gridy = 3; // Fila 3
         add(label3,gbc);
-        label3.setPreferredSize(buttonSize);
+        label3.setPreferredSize(labelSize);
 
 
 
@@ -119,11 +178,11 @@ public class PanelDispensador extends JPanel {
 
         gbc.gridy = 1; // Fila 1
         add(label4,gbc);
-        label4.setPreferredSize(buttonSize);
+        label4.setPreferredSize(labelSize);
 
         gbc.gridy = 2; // Fila 2
         add(label5,gbc);
-        label5.setPreferredSize(buttonSize);
+        label5.setPreferredSize(labelSize);
 
         gbc.gridy = 4; // Fila 2
         add(aa,gbc);
@@ -135,4 +194,12 @@ public class PanelDispensador extends JPanel {
         vuelto.setPreferredSize(buttonSize);
 
     }
+
+    public void recibirObjeto(Moneda monEnviada) {
+        MonEnDisp=monEnviada;
+        System.out.println("Objeto recibido en Dispensador: " + MonEnDisp.getValor());
+    }
+
+
+
 }

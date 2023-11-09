@@ -152,4 +152,20 @@ class Expendedor{
     public Moneda getVuelto(){
         return monVu.get();
     }
+
+    public int cocaTamaño(){
+        return coca.chequear();
+    }
+    public int spriteTamaño(){
+        return sprite.chequear();
+    }
+    public int fantaTamaño(){
+        return fanta.chequear();
+    }
+    public int super8Tamaño(){
+        return super8.chequear();
+    }
+    public int snickersTamaño(){
+        return snikers.chequear();
+    }
 }

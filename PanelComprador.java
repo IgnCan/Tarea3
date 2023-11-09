@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
+//        System.out.println(c.queBebiste());
+//        System.out.println(c.cuantoVuelto());
+
 public class PanelComprador extends JPanel {
 
     JLabel label= new JLabel("Aca va el producto");
@@ -41,8 +44,4 @@ public class PanelComprador extends JPanel {
         add(label3,labelConstraints);
     }
 
-    public void setTexto1(String a){
-        label.setText(a);
-        repaint();
-    }
 }
