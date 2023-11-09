@@ -62,11 +62,15 @@ class Expendedor{
             case 1: {
 
                 if (m.getValor() >= product.COCA.getPresio() && coca.chequear() != 0) {
-                    monCompra.add(m);
+
                     for (int i = 1; i <= (m.getValor() - product.COCA.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
-                    return coca.get(), ;
+
+                    monCompra.add(m);
+//                    DepProd.add(coca.get());
+                    return coca.get();
+
 
                 } else if (coca.chequear()==0) {
                     monVu.add(m);
@@ -157,6 +161,10 @@ class Expendedor{
 
     public Moneda getVuelto(){
         return monVu.get();
+    }
+
+    public Producto getProducto(){
+        return DepProd.get();
     }
 
 
