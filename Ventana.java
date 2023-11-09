@@ -22,10 +22,10 @@ public class Ventana extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setTitle("Bonito Dispensador :D (estoy cansado jefe)");
-        PanelesYBotones();
+        Paneles();
     }
 
-    public void PanelesYBotones(){
+    public void Paneles(){
         //Crea el panel
         setLayout(new BorderLayout());
 
@@ -50,6 +50,5 @@ public class Ventana extends JFrame {
 
 
     }
-
 
 }

@@ -5,11 +5,6 @@ import java.awt.event.ActionListener;
 
 public class PanelDispensador extends JPanel {
 
-    Expendedor exp = new Expendedor(1);
-    Moneda m = null;
-    Comprador c = null;
-
-
     public PanelDispensador(){
         super();
         setBackground(Color.PINK);
@@ -32,26 +27,31 @@ public class PanelDispensador extends JPanel {
         botoncoca.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("CocaCola");
+
             }
         });
         botonsprite.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Sprite");
+
             }
         });
         botonfanta.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Fanta");
+
             }
         });
         botonsuper8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Super8");
+
             }
         });
         botonsnikers.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Snikers");
+
             }
         });
 
@@ -96,9 +96,7 @@ public class PanelDispensador extends JPanel {
         gbc.gridy = 3; // Fila 3
         add(label3,gbc);
         label3.setPreferredSize(buttonSize);
-
-
-
+        
         gbc.gridx = 3; // Columna 3
 
         gbc.gridy = 1; // Fila 1

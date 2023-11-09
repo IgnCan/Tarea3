@@ -4,16 +4,42 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelMonedas extends JPanel {
+    JButton mon100 = new JButton("$ 100");
+    JButton mon500 = new JButton("$ 500");
+    JButton mon1000 = new JButton("$ 1000");
+
+
+
+
+    Moneda m;
 
     public PanelMonedas(){
         super();
         setBackground(Color.DARK_GRAY);
-        Moneda m;
 
-        //Aca se crea cada jBoton
-        JButton mon100 = new JButton("$ 100");
-        JButton mon500 = new JButton("$ 500");
-        JButton mon1000 = new JButton("$ 1000");
+        mon100.addActionListener(new ActionListener() {
+              @Override
+              public void actionPerformed(ActionEvent e) {
+                  m = new Moneda100();
+                  System.out.println(m.getValor());
+              }
+          });
+        mon500.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                m = new Moneda500();
+                System.out.println(m.getValor());
+            }
+        });
+
+        mon1000.addActionListener(new ActionListener() {
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+                Moneda1000 m = new Moneda1000();
+                System.out.println(m.getValor());
+            }
+        });
 
 
         //Aca defino una forma base para cada jBoton (cuadrado de 100x100)
@@ -41,57 +67,44 @@ public class PanelMonedas extends JPanel {
         mon1000.setPreferredSize(buttonSize);
 
 
-
     }
 
-
-
-    public class Boton100peso extends JButton {
-
-        public Boton100peso() {
-            super();
-            this.setText("100 peso");
-            addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    Moneda100 m = new Moneda100();
-
-                    System.out.println(m.getValor());
-
-                }
-            });
-        }
+    public Moneda getM() {
+        return m;
     }
-
-    public class Boton500peso extends JButton {
-        public Boton500peso(){
-            super();
-            //Esto agrega el texto
-            this.setText("500 peso");
-            addActionListener(new ActionListener() {
-                @Override
-
-                public void actionPerformed(ActionEvent e) {
-                    Moneda500 m = new Moneda500();
-                    System.out.println(m.getValor());
-                }
-            });
-        }
-    }
-
-    public class Boton1000peso extends JButton {
-        public Boton1000peso(){
-            super();
-            //Esto agrega el texto
-            this.setText("1000 peso");
-            addActionListener(new ActionListener() {
-                @Override
-
-                public void actionPerformed(ActionEvent e) {
-                    Moneda1000 m = new Moneda1000();
-                    System.out.println(m.getValor());
-                }
-            });
-        }
-    }
+    //    public class Boton100peso extends JButton {
+//
+//        public Boton100peso() {
+//            super();
+//            this.setText("100 peso");
+//            addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    Moneda100 m = new Moneda100();
+//
+//                    System.out.println(m.getValor());
+//
+//
+//                }
+//            });
+//        }
+//    }
+//
+//    public class Boton500peso extends JButton {
+//        public Boton500peso(Moneda m){
+//            super();
+//            //Esto agrega el texto
+//            this.setText("500 peso");
+//
+//        }
+//    }
+//
+//    public class Boton1000peso extends JButton {
+//        public Boton1000peso(){
+//            super();
+//            //Esto agrega el texto
+//            this.setText("1000 peso");
+//
+//        }
+//    }
 }
