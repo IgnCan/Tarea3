@@ -37,7 +37,8 @@ public class PanelDispensador extends JPanel  {
                     c = new Comprador(MonEnDisp, 1, exp);
                     System.out.println(c.queBebiste());
                     label.setText(String.valueOf(exp.cocaTamaño()));
-                    vuelto.setText("");
+                    vuelto.setText(exp.getVuelto().toString());
+
 
 //                    ActivarBotonesEvent event = new ActivarBotonesEvent(this);
 //                    Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(event);
@@ -58,6 +59,8 @@ public class PanelDispensador extends JPanel  {
                     c = new Comprador(MonEnDisp, 2, exp);
                     System.out.println(c.queBebiste());
                     label2.setText(String.valueOf(exp.cocaTamaño()));
+                    vuelto.setText(exp.getVuelto().toString());
+
                 } catch (NoHayProductoException ex) {
                     throw new RuntimeException(ex);
                 } catch (PagoInsuficienteException ex) {
@@ -76,6 +79,7 @@ public class PanelDispensador extends JPanel  {
                     System.out.println(c.queBebiste());
                     label3.setText(String.valueOf(exp.cocaTamaño()));
                     comprador.recepcionProducto(c.queCompra());
+                    vuelto.setText(exp.getVuelto().toString());
 
 
                 } catch (NoHayProductoException ex) {
@@ -95,6 +99,8 @@ public class PanelDispensador extends JPanel  {
                     c = new Comprador(MonEnDisp, 4, exp);
                     System.out.println(c.queBebiste());
                     label4.setText(String.valueOf(exp.cocaTamaño()));
+                    vuelto.setText(exp.getVuelto().toString());
+
                 } catch (NoHayProductoException ex) {
                     throw new RuntimeException(ex);
                 } catch (PagoInsuficienteException ex) {
@@ -112,6 +118,8 @@ public class PanelDispensador extends JPanel  {
                     c = new Comprador(MonEnDisp, 5, exp);
                     System.out.println(c.queBebiste());
                     label5.setText(String.valueOf(exp.cocaTamaño()));
+                    vuelto.setText(exp.getVuelto().toString());
+
                 } catch (NoHayProductoException ex) {
                     throw new RuntimeException(ex);
                 } catch (PagoInsuficienteException ex) {
