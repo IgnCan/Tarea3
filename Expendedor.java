@@ -17,7 +17,7 @@ class Expendedor{
 
     public enum product{
         COCA(1,300),
-        SPRITE(2,2000),
+        SPRITE(2,1000),
         FANTA(3,600),
         SUPER8(4,700),
         SNIKERS(5,500);
