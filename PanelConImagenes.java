@@ -8,11 +8,11 @@ public class PanelConImagenes{
 
         switch (a){
             case "cocacola":{
-                I = new ImageIcon("C:\Users\snmar\Downloads\cocacola.jpg");
+                I = new ImageIcon("C:\\Users\\snmar\\OneDrive\\Documentos\\GitHub\\Tarea3\\imagenes\\cocacola.jpg");
 
             }
             case "sprite":{
-                I = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\Sprite.jpg\"");
+                I = new ImageIcon("imagenes/fanta.jpg");
 
 
             }
