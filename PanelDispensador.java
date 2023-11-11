@@ -16,17 +16,22 @@ public class PanelDispensador extends JPanel {
     private PanelListener panelListener;
 
     JLabel label = new JLabel(String.valueOf(exp.cocaTamaño()));
-    JButton botoncoca = new JButton("Coca-Cola");
+    JLabel labelc=new JLabel(new PanelConImagenes("cocacola",50).getIcon());
+    JButton botoncoca = new JButton("Coca-Cola : $300");
     JLabel label2 = new JLabel(String.valueOf(exp.spriteTamaño()));
-    JButton botonsprite = new JButton("Sprite");
+    JLabel labels=new JLabel(new PanelConImagenes("sprite",50).getIcon());
+    JButton botonsprite = new JButton("Sprite : $1000");
     JLabel label3 = new JLabel(String.valueOf(exp.fantaTamaño()));
-    JButton botonfanta = new JButton("Fanta");
+    JLabel labelf=new JLabel(new PanelConImagenes("Fanta",50).getIcon());
+    JButton botonfanta = new JButton("Fanta : $600");
     JLabel label4 = new JLabel(String.valueOf(exp.super8Tamaño()));
-    JButton botonsuper8 = new JButton("Super8");
+    JLabel labelsu=new JLabel(new PanelConImagenes("Super8",50).getIcon());
+    JButton botonsuper8 = new JButton("Super8 : $700 ");
     JLabel label5 = new JLabel(String.valueOf(exp.snickersTamaño()));
-    JButton botonsnikers = new JButton("Snikers");
-    JLabel labelCompra = new JLabel("Aca sale la compra");
-    JLabel vuelto = new JLabel("De aca saldra el vuelto");
+    JLabel labelsn=new JLabel(new PanelConImagenes("Snikers",50).getIcon());
+    JButton botonsnikers = new JButton("Snikers : $500");
+    JLabel labelCompra = new JLabel("Compra");
+    JLabel vuelto = new JLabel("Vuelto");
 
     private DesactivarBotonesListener desactivarBotonesListener;
 
@@ -34,6 +39,114 @@ public class PanelDispensador extends JPanel {
     public PanelDispensador(PanelListener listener) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         super();
         setBackground(Color.PINK);
+
+        //Aca defino una forma base para cada jBoton de 100x60
+        Dimension buttonSize = new Dimension(400, 800);
+        Dimension labelSize = new Dimension(20, 20);
+        Dimension bebidaSize = new Dimension(5, 5);
+
+        Font font = new Font("Arial", Font.BOLD, 14); // Puedes ajustar la familia de la fuente, estilo y tamaño
+        botoncoca.setFont(font);
+        botonsprite.setFont(font);
+        botonfanta.setFont(font);
+        botonsuper8.setFont(font);
+        botonsnikers.setFont(font);
+        vuelto.setFont(font);
+        labelCompra.setFont(font);
+
+
+        //Aca los organizo
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+
+        //Da un especiado de 10p entre cada boton
+        gbc.insets = new Insets(0, 0, 0, 10);
+
+        gbc.gridx = 0; // Columna 0
+
+
+        gbc.gridy = 1; // Fila 0
+        add(labelc, gbc);
+        labelc.setPreferredSize(bebidaSize);
+
+        gbc.gridy = 2; // Fila 2
+        add(labels, gbc);
+        labels.setPreferredSize(bebidaSize);
+
+        gbc.gridy = 3; // Fila 3
+        add(labelf, gbc);
+        labelf.setPreferredSize(bebidaSize);
+
+        gbc.gridy = 4; // Fila 4
+        add(labelsu, gbc);
+        labelsu.setPreferredSize(bebidaSize);
+
+        gbc.gridy = 5; // Fila 0
+        add(labelsn, gbc);
+        labelsn.setPreferredSize(bebidaSize);
+
+        gbc.gridx = 2; // Columna 1
+
+        gbc.gridy = 1; // Fila 0
+        add(botoncoca, gbc);
+        botoncoca.setPreferredSize(buttonSize);
+
+        gbc.gridy = 2; // Fila 1
+        add(botonsprite, gbc);
+        botonsprite.setPreferredSize(buttonSize);
+
+        gbc.gridy = 3; // Fila 2
+        add(botonfanta, gbc);
+        botonfanta.setPreferredSize(buttonSize);
+
+        gbc.gridy = 4; // Fila 1
+        add(botonsuper8, gbc);
+        botonsuper8.setPreferredSize(buttonSize);
+
+        gbc.gridy = 5; // Fila 2
+        add(botonsnikers, gbc);
+        botonsnikers.setPreferredSize(buttonSize);
+        gbc.gridy = 9; // Fila 5
+        add(labelCompra, gbc);
+        labelCompra.setPreferredSize(buttonSize);
+
+        gbc.gridx = 3; // Columna 2
+
+        gbc.gridy = 1; // Fila 1
+        add(label, gbc);
+        label.setPreferredSize(labelSize);
+
+        gbc.gridy = 2; // Fila 2
+        add(label2, gbc);
+        label2.setPreferredSize(labelSize);
+
+        gbc.gridy = 3; // Fila 3
+        add(label3, gbc);
+        label3.setPreferredSize(labelSize);
+
+        gbc.gridy = 4; // Fila 1
+        add(label4, gbc);
+        label4.setPreferredSize(labelSize);
+
+        gbc.gridy = 5; // Fila 2
+        add(label5, gbc);
+        label5.setPreferredSize(labelSize);
+
+        gbc.gridy = 6; // Fila 2
+        JLabel aa = new JLabel("   ");
+        add(aa, gbc);
+        aa.setPreferredSize(buttonSize);
+
+        gbc.gridy = 7; // Fila 2
+        aa = new JLabel("   ");
+        add(aa, gbc);
+        aa.setPreferredSize(buttonSize);
+
+
+        gbc.gridy = 9; // Fila 5
+        add(vuelto, gbc);
+        vuelto.setPreferredSize(labelSize);
+
         this.panelListener = listener;
         botoncoca.addActionListener(new ActionListener() {
             @Override
@@ -44,6 +157,7 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.getProdSerie());
                     label.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
                     if (desactivarBotonesListener != null) {
                         desactivarBotonesListener.desactivarBotones();
@@ -63,6 +177,7 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.getProdSerie());
                     label2.setText(String.valueOf(exp.spriteTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
                     if (desactivarBotonesListener != null) {
                         desactivarBotonesListener.desactivarBotones();
@@ -81,6 +196,7 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.getProdSerie());
                     label3.setText(String.valueOf(exp.fantaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
                     if (desactivarBotonesListener != null) {
                         desactivarBotonesListener.desactivarBotones();
@@ -99,6 +215,7 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.getProdSerie());
                     label4.setText(String.valueOf(exp.super8Tamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
                     if (desactivarBotonesListener != null) {
                         desactivarBotonesListener.desactivarBotones();
@@ -127,87 +244,6 @@ public class PanelDispensador extends JPanel {
             }
         });
 
-
-        //Aca defino una forma base para cada jBoton de 100x60
-        Dimension buttonSize = new Dimension(75, 50);
-        Dimension labelSize = new Dimension(30, 30);
-
-
-        //Aca los organizo
-        setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-
-        //Da un especiado de 10p entre cada boton
-        gbc.insets = new Insets(0, 0, 0, 10);
-
-        gbc.gridx = 0; // Columna 0
-
-        gbc.gridy = 1; // Fila 0
-        add(botoncoca, gbc);
-        botoncoca.setPreferredSize(buttonSize);
-
-        gbc.gridy = 2; // Fila 1
-        add(botonsprite, gbc);
-        botonsprite.setPreferredSize(buttonSize);
-
-        gbc.gridy = 3; // Fila 2
-        add(botonfanta, gbc);
-        botonfanta.setPreferredSize(buttonSize);
-
-
-        gbc.gridx = 1; // Columna 1
-
-        gbc.gridy = 1; // Fila 1
-        add(label, gbc);
-        label.setPreferredSize(labelSize);
-
-        gbc.gridy = 2; // Fila 2
-        add(label2, gbc);
-        label2.setPreferredSize(labelSize);
-
-        gbc.gridy = 3; // Fila 3
-        add(label3, gbc);
-        label3.setPreferredSize(labelSize);
-
-
-        gbc.gridx = 3; // Columna 3
-
-        gbc.gridy = 1; // Fila 1
-        add(botonsuper8, gbc);
-        botonsuper8.setPreferredSize(buttonSize);
-
-        gbc.gridy = 2; // Fila 2
-        add(botonsnikers, gbc);
-        botonsnikers.setPreferredSize(buttonSize);
-
-        gbc.gridy = 4; // Fila 2
-        JLabel aa = new JLabel("   ");
-        add(aa, gbc);
-        aa.setPreferredSize(buttonSize);
-
-        gbc.gridy = 7; // Fila 5
-        add(labelCompra, gbc);
-        labelCompra.setPreferredSize(buttonSize);
-
-
-        gbc.gridx = 4; // Columna 4
-
-        gbc.gridy = 1; // Fila 1
-        add(label4, gbc);
-        label4.setPreferredSize(labelSize);
-
-        gbc.gridy = 2; // Fila 2
-        add(label5, gbc);
-        label5.setPreferredSize(labelSize);
-
-        gbc.gridy = 4; // Fila 2
-        add(aa, gbc);
-        aa.setPreferredSize(buttonSize);
-
-
-        gbc.gridy = 7; // Fila 5
-        add(vuelto, gbc);
-        vuelto.setPreferredSize(buttonSize);
 
     }
 
