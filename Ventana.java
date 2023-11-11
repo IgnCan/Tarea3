@@ -27,6 +27,9 @@ public class Ventana extends JFrame {
         //Crea el panel
         setLayout(new BorderLayout());
 
+        comprador = new PanelComprador();
+        this.getContentPane().add(comprador);
+
 
         dispensador = new PanelDispensador(comprador);
         this.getContentPane().add(dispensador);
@@ -34,8 +37,7 @@ public class Ventana extends JFrame {
         monedas = new PanelMonedas(dispensador);
         this.getContentPane().add(monedas);
 
-        comprador = new PanelComprador();
-        this.getContentPane().add(comprador);
+
 
 
 

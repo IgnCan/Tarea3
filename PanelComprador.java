@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.EventObject;
+import java.awt.event.AWTEventListener;
 
 //        System.out.println(c.queBebiste());
 //        System.out.println(c.cuantoVuelto());
 
-public class PanelComprador extends JPanel {
+public class PanelComprador extends JPanel implements PanelListener {
     private Comprador Compra= null;
     JLabel label= new JLabel("Aca va el producto");
     JLabel label3 = new JLabel("Aca va el vuelto");
@@ -42,12 +44,23 @@ public class PanelComprador extends JPanel {
         labelConstraints.gridy = 1;
         label3.setPreferredSize(LABELZISE);
         add(label3,labelConstraints);
+
+
     }
 
-    public void recepcionProducto(Comprador compra) {
-        Compra = compra;
-        label.setText(Compra.toString());
-        System.out.println("Objeto recibido en comprador: ");
-        repaint();
+//    public void recepcionProducto(Comprador compra) {
+//        Compra = compra;
+//        label.setText(Compra.toString());
+//        System.out.println("Objeto recibido en comprador: ");
+//        repaint();
+//    }
+
+    public void onObjectReceived(Comprador objeto) {
+        // Manejar el objeto recibido en JPanelB
+        Compra=objeto;
+        label.setText(Compra.queBebiste());
+        label3.setText(String.valueOf(Compra.cuantoVuelto()));
+        System.out.println("Objeto recibido en JPanelB: " + objeto.cuantoVuelto());
+
     }
 }

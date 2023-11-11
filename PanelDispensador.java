@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.EventObject;
 
 public class PanelDispensador extends JPanel {
 
@@ -9,7 +10,7 @@ public class PanelDispensador extends JPanel {
     Comprador c = null;
     private Expendedor exp = new Expendedor(1);
 
-
+    private PanelListener panelListener;
 
     JLabel label = new JLabel(String.valueOf(exp.cocaTamaño()));
     JButton botoncoca = new JButton("Coca-Cola");
@@ -24,9 +25,10 @@ public class PanelDispensador extends JPanel {
     JLabel labelCompra = new JLabel("Aca sale la compra");
     JLabel vuelto = new JLabel("De aca saldra el vuelto");
 
-    public PanelDispensador(PanelComprador comprador) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+    public PanelDispensador(PanelListener listener) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         super();
         setBackground(Color.PINK);
+        this.panelListener = listener;
 
         botoncoca.addActionListener(new ActionListener() {
             @Override
@@ -38,6 +40,8 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.cuantoVuelto());
                     label.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    panelListener.onObjectReceived(c);
+
                     //comprador.label.setText("a");
                     //
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
@@ -57,11 +61,7 @@ public class PanelDispensador extends JPanel {
                     vuelto.setText(exp.getVuelto().toString());
 
 
-                } catch (NoHayProductoException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoInsuficienteException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoIncorrectoException ex) {
+                } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
             }
@@ -74,15 +74,11 @@ public class PanelDispensador extends JPanel {
                     c = new Comprador(MonEnDisp, 3, exp);
                     System.out.println(c.queBebiste());
                     label3.setText(String.valueOf(exp.cocaTamaño()));
-                    comprador.recepcionProducto(c);
+                    //comprador.recepcionProducto(c);
                     vuelto.setText(exp.getVuelto().toString());
 
 
-                } catch (NoHayProductoException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoInsuficienteException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoIncorrectoException ex) {
+                } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
             }
@@ -97,11 +93,7 @@ public class PanelDispensador extends JPanel {
                     label4.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(exp.getVuelto().toString());
 
-                } catch (NoHayProductoException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoInsuficienteException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoIncorrectoException ex) {
+                } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
             }
@@ -116,11 +108,7 @@ public class PanelDispensador extends JPanel {
                     label5.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(exp.getVuelto().toString());
 
-                } catch (NoHayProductoException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoInsuficienteException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoIncorrectoException ex) {
+                } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
             }
