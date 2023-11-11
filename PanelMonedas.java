@@ -4,19 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelMonedas extends JPanel {
-
     JButton mon100 = new Boton100peso();
     JButton mon500 = new Boton500peso();
     JButton mon1000 = new Boton1000peso();
-
-
-
     public Moneda m = null;
     public PanelMonedas(PanelDispensador dispensador){
         super();
         setBackground(Color.DARK_GRAY);
-
-        //Aca se crea cada jBoton
 
         mon100.addActionListener(new ActionListener() {
             @Override
@@ -62,16 +56,8 @@ public class PanelMonedas extends JPanel {
             }
         });
 
-
-
         //Aca defino una forma base para cada jBoton (cuadrado de 100x100)
         Dimension buttonSize = new Dimension(100, 100);
-
-
-        ImageIcon bot500 = new ImageIcon("Imagenes/Moneda500.png");
-        ImageIcon bot1000 = new ImageIcon("Imagenes/Moneda1000.png");
-
-
 
         //Aca los organizo
         setLayout(new GridBagLayout());
@@ -86,8 +72,6 @@ public class PanelMonedas extends JPanel {
         add(mon100,gbc);
         mon100.setPreferredSize(buttonSize);
 
-
-
         gbc.gridy = 1; // Fila 1
         add(mon500,gbc);
         mon500.setPreferredSize(buttonSize);
@@ -96,23 +80,9 @@ public class PanelMonedas extends JPanel {
         add(mon1000,gbc);
         mon1000.setPreferredSize(buttonSize);
 
-
-
-
     }
-//    Toolkit.getDefaultToolkit().getSystemEventQueue().push(new EventQueue() {
-//        protected void dispatchEvent(AWTEvent event) {
-//            if (event instanceof ActivarBotonesEvent) {
-//                Boton500peso.setEnabled(true);
-//                Boton100peso.setEnabled(true);
-//            }
-//            super.dispatchEvent(event);
-//        }
-//    });
 
     public class Boton100peso extends JButton {
-
-
         public Boton100peso() {
             super();
             ImageIcon I = new ImageIcon("Imagenes/Moneda100.png");
@@ -121,39 +91,33 @@ public class PanelMonedas extends JPanel {
             I= new ImageIcon(reescalado);
             this.setIcon(I);
             this.setContentAreaFilled(false);
-
-            //this.setIcon(I);
-
-
         }
-
     }
 
     public class Boton500peso extends JButton {
         public Boton500peso(){
             super();
-
             ImageIcon I = new ImageIcon("Imagenes/Moneda500.png");
             Image imagen = I.getImage();
             Image reescalado = imagen.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
             I= new ImageIcon(reescalado);
             this.setIcon(I);
             this.setContentAreaFilled(false);
-
         }
     }
 
+    /**
+     *
+     */
     public class Boton1000peso extends JButton {
         public Boton1000peso(){
             super();
-
             ImageIcon I = new ImageIcon("Imagenes/Moneda1000.png");
             Image imagen = I.getImage();
             Image reescalado = imagen.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
             I= new ImageIcon(reescalado);
             this.setIcon(I);
             this.setContentAreaFilled(false);
-
         }
     }
 }

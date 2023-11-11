@@ -1,27 +1,25 @@
 /**
  * Clase abstracta moneda, sirve para crear las que tienen valor definido.
  */
-
 abstract class Moneda{
     /**
-     * Constructor de la clase asbtracta
+     * Constructor de la clase asbtracta.
      */
     public Moneda(){
     }
-
     /**
-     * Lector de serie de la moneda
+     * Lector de serie de la moneda.
      */
     public Moneda getSerie(){
         return this;
     }
     /**
-     * Metodo abstracto que retorna el valor de la moneda
+     * Metodo abstracto que retorna el valor de la moneda.
      */
     public abstract int getValor();
 }
 /**
- * Clase hija de Moneda, esta tiene un valor de 100
+ * Clase hija de Moneda, esta tiene un valor concreto de 100.
  */
 class Moneda100 extends Moneda{
     public Moneda100(){
@@ -31,6 +29,9 @@ class Moneda100 extends Moneda{
         return 100;
     }
 }
+/**
+ * Clase hija de Moneda, esta tiene un valor concreto de 500.
+ */
 
 class Moneda500 extends Moneda{
     public Moneda500(){
@@ -40,7 +41,9 @@ class Moneda500 extends Moneda{
         return 500;
     }
 }
-
+/**
+ * Clase hija de Moneda, esta tiene un valor concreto de 1000.
+ */
 class Moneda1000 extends Moneda{
     public Moneda1000(){
         super();

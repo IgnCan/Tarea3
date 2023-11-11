@@ -2,7 +2,6 @@
 import ExcepcionesPropias.NoHayProductoException;
 import ExcepcionesPropias.PagoIncorrectoException;
 import ExcepcionesPropias.PagoInsuficienteException;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -49,9 +48,9 @@ public class Ventana extends JFrame {
         dispensador.setPreferredSize(new Dimension(400, 400));
         comprador.setPreferredSize(new Dimension(300, 400));
 
-        dispensador.addDesactivarBotonesListener(new DesactivarBotonesListener() {
+        dispensador.addActivarBotonesListener(new ActivarBotonesListener() {
             @Override
-            public void desactivarBotones() {
+            public void activarBotones() {
                 // Desactivar todos los botones
                 monedas.mon100.setEnabled(true);
                 monedas.mon500.setEnabled(true);

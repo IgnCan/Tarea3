@@ -5,10 +5,8 @@ import java.awt.event.AWTEventListener;
 
 public class PanelComprador extends JPanel implements PanelListener {
     private Comprador Compra= null;
-
-
-    JLabel label= new JLabel("Aca va el producto");
-    JLabel label3 = new JLabel("Aca va el vuelto");
+    private JLabel label= new JLabel("Aca va el producto");
+    private JLabel label3 = new JLabel("Aca va el vuelto");
 
     public PanelComprador() {
         super();
