@@ -5,7 +5,7 @@ import java.awt.*;
 //        System.out.println(c.cuantoVuelto());
 
 public class PanelComprador extends JPanel {
-    private Producto Compra= null;
+    private Comprador Compra= null;
     JLabel label= new JLabel("Aca va el producto");
     JLabel label3 = new JLabel("Aca va el vuelto");
 
@@ -44,9 +44,10 @@ public class PanelComprador extends JPanel {
         add(label3,labelConstraints);
     }
 
-    public void recepcionProducto(Producto prodDisp) {
-        Compra = prodDisp;
-        System.out.println("Objeto recibido en comprador: " + Compra.bebercomer()+ Compra.getSerie());
+    public void recepcionProducto(Comprador compra) {
+        Compra = compra;
+        label.setText(Compra.toString());
+        System.out.println("Objeto recibido en comprador: ");
         repaint();
     }
 }

@@ -12,7 +12,7 @@ public class PanelDispensador extends JPanel {
 
 
     JLabel label = new JLabel(String.valueOf(exp.cocaTamaño()));
-    JButton botoncoca = new botoncoca();
+    JButton botoncoca = new JButton("Coca-Cola");
     JLabel label2 = new JLabel(String.valueOf(exp.spriteTamaño()));
     JButton botonsprite = new JButton("Sprite");
     JLabel label3 = new JLabel(String.valueOf(exp.fantaTamaño()));
@@ -28,19 +28,24 @@ public class PanelDispensador extends JPanel {
         super();
         setBackground(Color.PINK);
 
-//        botoncoca.addActionListener(new ActionListener()  {
-//            @Override
-//            public void actionPerformed(ActionEvent e)  {
-//                System.out.println("Apretaste el boton");
-//                    c = new Comprador(MonEnDisp, 1, exp);
-//                    System.out.println(c.queBebiste());
-//                    label.setText(String.valueOf(exp.cocaTamaño()));
-//                    vuelto.setText(exp.getVuelto().toString());
-//
-//
-//            }
-//
-//        });
+        botoncoca.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Apretaste el boton");
+                try {
+                    c = new Comprador(MonEnDisp, 1, exp);
+                    System.out.println(c.queBebiste());
+                    System.out.println(c.cuantoVuelto());
+                    label.setText(String.valueOf(exp.cocaTamaño()));
+                    vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    //comprador.label.setText("a");
+                    //
+                } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+
+        });
         botonsprite.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -50,6 +55,7 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.queBebiste());
                     label2.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(exp.getVuelto().toString());
+
 
                 } catch (NoHayProductoException ex) {
                     throw new RuntimeException(ex);
@@ -68,7 +74,7 @@ public class PanelDispensador extends JPanel {
                     c = new Comprador(MonEnDisp, 3, exp);
                     System.out.println(c.queBebiste());
                     label3.setText(String.valueOf(exp.cocaTamaño()));
-                    comprador.recepcionProducto(c.queCompra());
+                    comprador.recepcionProducto(c);
                     vuelto.setText(exp.getVuelto().toString());
 
 
@@ -206,34 +212,12 @@ public class PanelDispensador extends JPanel {
 
     public void recibirObjeto(Moneda monEnviada) {
         MonEnDisp = monEnviada;
+
         System.out.println("Objeto recibido en Dispensador: " + MonEnDisp.getValor());
     }
 
-    public class botoncoca extends JButton {
-        public botoncoca() {
-            super();
-            this.setText("CocaCola");
-            addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    System.out.println("Apretaste el boton");
-                    try {
-                        c = new Comprador(MonEnDisp, 1, exp);
-                        System.out.println(c.queBebiste());
-                        System.out.println(c.cuantoVuelto());
-                        label.setText(String.valueOf(exp.cocaTamaño()));
-                        vuelto.setText(String.valueOf(c.cuantoVuelto()));
-                        // 
-                        //
-                    } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }
 
-            });
 
-        }
-    }
 
 
 
