@@ -67,6 +67,12 @@ public class PanelMonedas extends JPanel {
         //Aca defino una forma base para cada jBoton (cuadrado de 100x100)
         Dimension buttonSize = new Dimension(100, 100);
 
+
+        ImageIcon bot500 = new ImageIcon("Imagenes/Moneda500.png");
+        ImageIcon bot1000 = new ImageIcon("Imagenes/Moneda1000.png");
+
+
+
         //Aca los organizo
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -79,6 +85,8 @@ public class PanelMonedas extends JPanel {
         gbc.gridy = 0; // Fila 0
         add(mon100,gbc);
         mon100.setPreferredSize(buttonSize);
+
+
 
         gbc.gridy = 1; // Fila 1
         add(mon500,gbc);
@@ -104,9 +112,17 @@ public class PanelMonedas extends JPanel {
 
     public class Boton100peso extends JButton {
 
+
         public Boton100peso() {
             super();
-            this.setText("100 peso");
+            ImageIcon I = new ImageIcon("Imagenes/Moneda100.png");
+            Image imagen = I.getImage();
+            Image reescalado = imagen.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+            I= new ImageIcon(reescalado);
+            this.setIcon(I);
+            this.setContentAreaFilled(false);
+
+            //this.setIcon(I);
 
 
         }
@@ -116,8 +132,13 @@ public class PanelMonedas extends JPanel {
     public class Boton500peso extends JButton {
         public Boton500peso(){
             super();
-            //Esto agrega el texto
-            this.setText("500 peso");
+
+            ImageIcon I = new ImageIcon("Imagenes/Moneda500.png");
+            Image imagen = I.getImage();
+            Image reescalado = imagen.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+            I= new ImageIcon(reescalado);
+            this.setIcon(I);
+            this.setContentAreaFilled(false);
 
         }
     }
@@ -125,8 +146,13 @@ public class PanelMonedas extends JPanel {
     public class Boton1000peso extends JButton {
         public Boton1000peso(){
             super();
-            //Esto agrega el texto
-            this.setText("1000 peso");
+
+            ImageIcon I = new ImageIcon("Imagenes/Moneda1000.png");
+            Image imagen = I.getImage();
+            Image reescalado = imagen.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+            I= new ImageIcon(reescalado);
+            this.setIcon(I);
+            this.setContentAreaFilled(false);
 
         }
     }
