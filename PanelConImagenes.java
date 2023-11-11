@@ -4,21 +4,21 @@ import java.awt.*;
 public class PanelConImagenes{
     ImageIcon I;
 
-    public PanelConImagenes(String a) {
+    public PanelConImagenes(String a,int b) {
 
         switch (a){
             case "cocacola":{
                 I = new ImageIcon("Imagenes/cocacola.jpg");
                 Image imagen = I.getImage();
-                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
                 I= new ImageIcon(nuevaImagen);
                 break;
 
             }
             case "sprite":{
-                I = new ImageIcon("Imagenes/Sprite.jpg");
+                I = new ImageIcon("Imagenes/sprite.jpg");
                 Image imagen = I.getImage();
-                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
                 I= new ImageIcon(nuevaImagen);
                 break;
 
@@ -27,7 +27,7 @@ public class PanelConImagenes{
             case "Fanta":{
                 I = new ImageIcon("Imagenes/fanta.jpg");
                 Image imagen = I.getImage();
-                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
                 I= new ImageIcon(nuevaImagen);
                 break;
 
@@ -35,15 +35,15 @@ public class PanelConImagenes{
             case "Super8":{
                 I = new ImageIcon("Imagenes/super8.jpg");
                 Image imagen = I.getImage();
-                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
                 I= new ImageIcon(nuevaImagen);
                 break;
 
             }
-            case "Sniker":{
+            case "Snikers":{
                 I = new ImageIcon("Imagenes/snikers.jpg");
                 Image imagen = I.getImage();
-                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
                 I= new ImageIcon(nuevaImagen);
                 break;
 
