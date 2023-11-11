@@ -1,42 +1,41 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class PanelConImagenes extends JLabel {
-    JLabel Etiqueta;
-    public PanelConImagenes(int i) {
+public class PanelConImagenes{
+    ImageIcon I;
 
-        switch (i){
-            case 1:{
-            ImageIcon imagen1 = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\cocacola.jpg\"");
-            Etiqueta = new JLabel(imagen1);
+    public PanelConImagenes(String a) {
+
+        switch (a){
+            case "cocacola":{
+                I = new ImageIcon("C:\Users\snmar\Downloads\cocacola.jpg");
+
+            }
+            case "sprite":{
+                I = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\Sprite.jpg\"");
 
 
             }
-            case 2:{
-                ImageIcon imagen2 = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\Sprite.jpg\"");
-                Etiqueta = new JLabel(imagen2);
+            case "Fanta":{
+                I = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\fanta.jpg\"");
 
             }
-            case 3:{
-                ImageIcon imagen3 = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\fanta.jpg\"");
-                Etiqueta= new JLabel(imagen3);
+            case "Super8":{
+                I = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\super8.jpg\"");
+
 
             }
-            case 4:{
-                ImageIcon imagen4 = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\super8.jpg\"");
-                Etiqueta= new JLabel(imagen4);
-
-            }
-            case 5:{
-                ImageIcon imagen5 = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\snikers.jpg\"");
-                Etiqueta = new JLabel(imagen5);
+            case "Sniker":{
+                I = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\snikers.jpg\"");
 
 
         }
-            Dimension LABELZISE = new Dimension(100, 100);
-            Etiqueta.setPreferredSize(LABELZISE);
 
       }
+
+    }
+    public ImageIcon getIcon(){
+        return I;
     }
 }
 

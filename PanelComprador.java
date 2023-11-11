@@ -58,8 +58,12 @@ public class PanelComprador extends JPanel implements PanelListener {
     public void onObjectReceived(Comprador objeto) {
         // Manejar el objeto recibido en JPanelB
         Compra=objeto;
-        PanelConImagenes pp=new PanelConImagenes(Compra.queCompra().getSerie());
-        label=pp;
+        try{
+            ImageIcon pp =new PanelConImagenes(Compra.queBebiste()).getIcon();
+            label=new JLabel(pp);
+        } catch (Exception a){
+
+        }
         label3.setText(String.valueOf(Compra.cuantoVuelto()));
         System.out.println("Objeto recibido en JPanelB: " + objeto.cuantoVuelto());
         label.repaint();
