@@ -5,5 +5,4 @@ import java.util.EventListener;
 interface ActivarBotonesListener extends EventListener {
     void activarBotones();
 
-
 }

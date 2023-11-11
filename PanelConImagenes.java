@@ -1,9 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Clase encargado de asignar los iconos a su respectivo JLabel al realizar una compra, tiene como propiedad un ImageIcon vacio.
+ */
 public class PanelConImagenes{
     ImageIcon I;
-
+    /**
+     * Constructor encargado de asignar la imagen pedida, redimensionarla y asignarla a ImageIcon I
+     * @param a recibe un String, este es el .queBebiste de un objeto Comprador
+     * @param b es el tamaño que se le asignara a la imagen cuando sea redimensionada.
+     */
     public PanelConImagenes(String a,int b) {
 
         switch (a){
@@ -52,6 +59,10 @@ public class PanelConImagenes{
       }
 
     }
+    /**
+     * Metodo que retorna el Icono que aparecera en PanelDispensador y PanelComprador al realizar una compra
+     * @return I, un ImageIcon
+     */
     public ImageIcon getIcon(){
         return I;
     }

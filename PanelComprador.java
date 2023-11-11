@@ -2,12 +2,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.EventObject;
 import java.awt.event.AWTEventListener;
-
+/**
+ * Clase PanelComprador que extiende a JPanel e imprementa el PanelListener, es el encargado de mostrar el producto recibido y el vuelto de la compra, tiene las siguientes propiedades:
+ * Dos JLabel que mostraran el producto recibido y el vuelto de la compra
+ * Un objeto comprador que sera modificado cuando lleguen los datos de PanelDispensador.
+ */
 public class PanelComprador extends JPanel implements PanelListener {
     private Comprador Compra= null;
     private JLabel label= new JLabel("Aca va el producto");
     private JLabel label3 = new JLabel("Aca va el vuelto");
-
+    /**
+     * Constructor, encargado de posicionar los JLabel en el lugar correcto y con el tamaño adecuado.
+     */
     public PanelComprador() {
         super();
         setBackground(Color.CYAN);
@@ -42,7 +48,10 @@ public class PanelComprador extends JPanel implements PanelListener {
         label3.setPreferredSize(LABELZISE);
         add(label3,labelConstraints);
     }
-
+    /**
+     * Metodo que recibe el objeto Comprador desde PanelDispensador, asi este panel nos podra decir que compro y cuanto vuelto obtuvo.
+     * @param objeto Es el objeto comprador que viene desde PanelDispensador.
+     */
     public void onObjectReceived(Comprador objeto) {
         Compra = objeto;
         try {
@@ -52,9 +61,6 @@ public class PanelComprador extends JPanel implements PanelListener {
         }
         label3.setText(String.valueOf(Compra.cuantoVuelto()));
         System.out.println("*************Objeto recibido en comprador: " + objeto.cuantoVuelto());
-        //repaint();
-
-
     }
 
 

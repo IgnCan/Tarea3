@@ -5,14 +5,17 @@ import ExcepcionesPropias.PagoInsuficienteException;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Clase ventana que es sublase de JFrame
+ * Se encarga de posicionar los JPaneles, asignar tamaño y recibir el evento de activacion de botones, tiene como propiedades 3 JPaneles, uno de monedas, otro dispensador y el ultimo el panel comprador.
+ */
 public class Ventana extends JFrame {
-
     PanelMonedas monedas = null;
     PanelDispensador dispensador= null;
     PanelComprador comprador = null;
-
-
-
+    /**
+     *Constructor, asigna tamaños y pocisiones de los JPaneles y recibe el evento activar botones
+     */
     public Ventana() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         //      Esto indica el ancho y largo respectivamente, recibe dos int
         this.setSize(1000, 800);
@@ -51,7 +54,6 @@ public class Ventana extends JFrame {
         dispensador.addActivarBotonesListener(new ActivarBotonesListener() {
             @Override
             public void activarBotones() {
-                // Desactivar todos los botones
                 monedas.mon100.setEnabled(true);
                 monedas.mon500.setEnabled(true);
                 monedas.mon1000.setEnabled(true);

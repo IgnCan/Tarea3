@@ -5,15 +5,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * PanelDispensador sublcase de JPanel, aca se ejecutara todo el proceso de compra, tiene las siguientes propiedades:
+ * Moneda MonEnDisp - una moneda nula que se definira cuando llegue desde PanelMonedas
+ * Comprador c - Comprador nulo que se definira una vez seleccionado el producto.
+ * Expendedor exp - expendedor que se inicializa con el JPanel, aca se define que cantidad de productos tiene el dispensador al inicio.
+ * PanelListener panelListener - para el envio de datos entre paneles.
+ * JBotones para todos los elementos que estaran en venta.
+ * Jlabels que indicaran vuelto, cuantos productos quedan y el producto vendido.
+ * ActivarBotonesListener activarBotonesListener que ayuda tambien al envio de datos entre paneles por eventos.
+ */
 public class PanelDispensador extends JPanel {
-
     private Moneda MonEnDisp = null;
-    Comprador c = null;
+    private Comprador c = null;
     private Expendedor exp = new Expendedor(1);
-
     private PanelListener panelListener;
-
     JLabel label = new JLabel(String.valueOf(exp.cocaTamaño()));
     JLabel labelc=new JLabel(new PanelConImagenes("cocacola",50).getIcon());
     JButton botoncoca = new JButton("Coca-Cola : $300");
@@ -31,11 +37,16 @@ public class PanelDispensador extends JPanel {
     JButton botonsnikers = new JButton("Snikers : $500");
     JLabel labelCompra = new JLabel("Compra");
     JLabel vuelto = new JLabel("Vuelto");
-
-
     private ActivarBotonesListener activarBotonesListener;
 
-
+    /**
+     * Constructor del panel dispensador, se definen la posicion de los botones y sus acciones.
+     * Los JBotones ejecutaran un intento de compra cuando son presionados los datos de la comra (exitoso o no) se enviaran al panel comprador donde se veran los resultados al mismo tiempo, reactivara los botones en PanelMonedas para permitir intentar otra compra y seguir un ciclo donde se puedan realizar varias compras seguidas en una misma ejecucion del main.
+     * @param listener Sirve para enviar datos a PanelComprador y terminar el proceso de compra.
+     * @throws NoHayProductoException
+     * @throws PagoInsuficienteException
+     * @throws PagoIncorrectoException
+     */
     public PanelDispensador(PanelListener listener) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         super();
         setBackground(Color.PINK);
@@ -246,22 +257,19 @@ public class PanelDispensador extends JPanel {
 
 
     }
-
+    /**
+     * Recibe el objeto enviado desde PanelMonedas, asi puede ser ingresado al dispensador.
+     * @param monEnviada Es la recibida
+     */
     public void recibirObjeto(Moneda monEnviada) {
         MonEnDisp = monEnviada;
-
         System.out.println("Objeto recibido en Dispensador: " + MonEnDisp.getValor());
     }
-
+    /**
+     * Metodo que escucha cuando un JBoton de este panel fue presionado y reactiva los botones del PanelMonedas
+     * @param listener Es la escucha del evento
+     */
     public void addActivarBotonesListener(ActivarBotonesListener listener) {
         this.activarBotonesListener = listener;
     }
-
-    public void removeDesactivarBotonesListener() {
-        this.activarBotonesListener = null;
-    }
-
-
-
-
 }
