@@ -59,6 +59,8 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.queBebiste());
                     label2.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(exp.getVuelto().toString());
+                    vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    panelListener.onObjectReceived(c);
 
 
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
@@ -76,6 +78,8 @@ public class PanelDispensador extends JPanel {
                     label3.setText(String.valueOf(exp.cocaTamaño()));
                     //comprador.recepcionProducto(c);
                     vuelto.setText(exp.getVuelto().toString());
+                    vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    panelListener.onObjectReceived(c);
 
 
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
@@ -92,6 +96,8 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.queBebiste());
                     label4.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(exp.getVuelto().toString());
+                    vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    panelListener.onObjectReceived(c);
 
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
@@ -107,6 +113,8 @@ public class PanelDispensador extends JPanel {
                     System.out.println(c.queBebiste());
                     label5.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(exp.getVuelto().toString());
+                    vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    panelListener.onObjectReceived(c);
 
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
