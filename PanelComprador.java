@@ -48,7 +48,7 @@ public class PanelComprador extends JPanel implements PanelListener {
     public void onObjectReceived(Comprador objeto) {
         Compra = objeto;
         try {
-            PanelConImagenes pp = new PanelConImagenes(Compra.queBebiste());
+            PanelConImagenes pp = new PanelConImagenes(Compra.queBebiste(),100);
             label.setIcon(pp.getIcon());
         } catch (Exception a) {
         }
