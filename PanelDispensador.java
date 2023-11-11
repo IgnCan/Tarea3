@@ -25,11 +25,13 @@ public class PanelDispensador extends JPanel {
     JLabel labelCompra = new JLabel("Aca sale la compra");
     JLabel vuelto = new JLabel("De aca saldra el vuelto");
 
+    private DesactivarBotonesListener desactivarBotonesListener;
+
+
     public PanelDispensador(PanelListener listener) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         super();
         setBackground(Color.PINK);
         this.panelListener = listener;
-
         botoncoca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,6 +43,9 @@ public class PanelDispensador extends JPanel {
                     label.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     panelListener.onObjectReceived(c);
+                    if (desactivarBotonesListener != null) {
+                        desactivarBotonesListener.desactivarBotones();
+                    }
 
                     //comprador.label.setText("a");
                     //

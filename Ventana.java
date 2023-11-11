@@ -30,17 +30,11 @@ public class Ventana extends JFrame {
         comprador = new PanelComprador();
         this.getContentPane().add(comprador);
 
-
         dispensador = new PanelDispensador(comprador);
         this.getContentPane().add(dispensador);
 
         monedas = new PanelMonedas(dispensador);
         this.getContentPane().add(monedas);
-
-
-
-
-
 
 
 //        PanelDispensador dispensador = new PanelDispensador();

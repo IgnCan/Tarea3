@@ -29,7 +29,7 @@ public class PanelComprador extends JPanel implements PanelListener {
         label3.setForeground(Color.BLACK);
 
         // Habilitar la propiedad de opacidad para que el color de fondo sea visible
-        label.setOpaque(true);
+        //label.setOpaque(true);
         label3.setOpaque(true);
 
         label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -57,16 +57,17 @@ public class PanelComprador extends JPanel implements PanelListener {
 
     public void onObjectReceived(Comprador objeto) {
         // Manejar el objeto recibido en JPanelB
-        Compra=objeto;
-        try{
-            ImageIcon pp =new PanelConImagenes(Compra.queBebiste()).getIcon();
-            label=new JLabel(pp);
-        } catch (Exception a){
+        Compra = objeto;
+        try {
+            PanelConImagenes pp = new PanelConImagenes(Compra.queBebiste());
+            label.setIcon(pp.getIcon());
+        } catch (Exception a) {
 
         }
         label3.setText(String.valueOf(Compra.cuantoVuelto()));
         System.out.println("Objeto recibido en JPanelB: " + objeto.cuantoVuelto());
-        label.repaint();
+        repaint();
+
 
     }
 

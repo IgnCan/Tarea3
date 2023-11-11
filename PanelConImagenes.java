@@ -8,26 +8,44 @@ public class PanelConImagenes{
 
         switch (a){
             case "cocacola":{
-                I = new ImageIcon("C:\\Users\\snmar\\OneDrive\\Documentos\\GitHub\\Tarea3\\imagenes\\cocacola.jpg");
+                I = new ImageIcon("Imagenes/cocacola.jpg");
+                Image imagen = I.getImage();
+                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                I= new ImageIcon(nuevaImagen);
+                break;
 
             }
             case "sprite":{
-                I = new ImageIcon("imagenes/fanta.jpg");
+                I = new ImageIcon("Imagenes/Sprite.jpg");
+                Image imagen = I.getImage();
+                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                I= new ImageIcon(nuevaImagen);
+                break;
 
 
             }
             case "Fanta":{
-                I = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\fanta.jpg\"");
+                I = new ImageIcon("Imagenes/fanta.jpg");
+                Image imagen = I.getImage();
+                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                I= new ImageIcon(nuevaImagen);
+                break;
 
             }
             case "Super8":{
-                I = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\super8.jpg\"");
-
+                I = new ImageIcon("Imagenes/super8.jpg");
+                Image imagen = I.getImage();
+                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                I= new ImageIcon(nuevaImagen);
+                break;
 
             }
             case "Sniker":{
-                I = new ImageIcon("\"C:\\Users\\snmar\\Downloads\\snikers.jpg\"");
-
+                I = new ImageIcon("Imagenes/snikers.jpg");
+                Image imagen = I.getImage();
+                Image nuevaImagen = imagen.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+                I= new ImageIcon(nuevaImagen);
+                break;
 
         }
 
