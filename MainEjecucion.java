@@ -1,3 +1,7 @@
+import ExcepcionesPropias.NoHayProductoException;
+import ExcepcionesPropias.PagoIncorrectoException;
+import ExcepcionesPropias.PagoInsuficienteException;
+
 // hare pruebas de ejecucion aca en lo que aprendo junit
 public class MainEjecucion {
 

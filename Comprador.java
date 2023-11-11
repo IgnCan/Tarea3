@@ -1,3 +1,7 @@
+import ExcepcionesPropias.NoHayProductoException;
+import ExcepcionesPropias.PagoIncorrectoException;
+import ExcepcionesPropias.PagoInsuficienteException;
+
 class Comprador{
     private String sonido;
     private int vuelto;

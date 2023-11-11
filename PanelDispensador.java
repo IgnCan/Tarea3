@@ -1,8 +1,11 @@
+import ExcepcionesPropias.NoHayProductoException;
+import ExcepcionesPropias.PagoIncorrectoException;
+import ExcepcionesPropias.PagoInsuficienteException;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.EventObject;
 
 public class PanelDispensador extends JPanel {
 
@@ -38,17 +41,13 @@ public class PanelDispensador extends JPanel {
                 System.out.println("Apretaste el boton");
                 try {
                     c = new Comprador(MonEnDisp, 1, exp);
-                    System.out.println(c.queBebiste());
-                    System.out.println(c.cuantoVuelto());
+                    System.out.println(c.getProdSerie());
                     label.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     panelListener.onObjectReceived(c);
                     if (desactivarBotonesListener != null) {
                         desactivarBotonesListener.desactivarBotones();
                     }
-
-                    //comprador.label.setText("a");
-                    //
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -61,13 +60,13 @@ public class PanelDispensador extends JPanel {
                 System.out.println("Sprite");
                 try {
                     c = new Comprador(MonEnDisp, 2, exp);
-                    System.out.println(c.queBebiste());
-                    label2.setText(String.valueOf(exp.cocaTamaño()));
-                    vuelto.setText(exp.getVuelto().toString());
+                    System.out.println(c.getProdSerie());
+                    label2.setText(String.valueOf(exp.spriteTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     panelListener.onObjectReceived(c);
-
-
+                    if (desactivarBotonesListener != null) {
+                        desactivarBotonesListener.desactivarBotones();
+                    }
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -79,14 +78,13 @@ public class PanelDispensador extends JPanel {
                 System.out.println("Fanta");
                 try {
                     c = new Comprador(MonEnDisp, 3, exp);
-                    System.out.println(c.queBebiste());
-                    label3.setText(String.valueOf(exp.cocaTamaño()));
-                    //comprador.recepcionProducto(c);
-                    vuelto.setText(exp.getVuelto().toString());
+                    System.out.println(c.getProdSerie());
+                    label3.setText(String.valueOf(exp.fantaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     panelListener.onObjectReceived(c);
-
-
+                    if (desactivarBotonesListener != null) {
+                        desactivarBotonesListener.desactivarBotones();
+                    }
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -98,12 +96,13 @@ public class PanelDispensador extends JPanel {
                 System.out.println("Super8");
                 try {
                     c = new Comprador(MonEnDisp, 4, exp);
-                    System.out.println(c.queBebiste());
-                    label4.setText(String.valueOf(exp.cocaTamaño()));
-                    vuelto.setText(exp.getVuelto().toString());
+                    System.out.println(c.getProdSerie());
+                    label4.setText(String.valueOf(exp.super8Tamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     panelListener.onObjectReceived(c);
-
+                    if (desactivarBotonesListener != null) {
+                        desactivarBotonesListener.desactivarBotones();
+                    }
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -115,12 +114,13 @@ public class PanelDispensador extends JPanel {
                 System.out.println("Snikers");
                 try {
                     c = new Comprador(MonEnDisp, 5, exp);
-                    System.out.println(c.queBebiste());
-                    label5.setText(String.valueOf(exp.cocaTamaño()));
-                    vuelto.setText(exp.getVuelto().toString());
+                    System.out.println(c.getProdSerie());
+                    label5.setText(String.valueOf(exp.snickersTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     panelListener.onObjectReceived(c);
-
+                    if (desactivarBotonesListener != null) {
+                        desactivarBotonesListener.desactivarBotones();
+                    }
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -217,7 +217,13 @@ public class PanelDispensador extends JPanel {
         System.out.println("Objeto recibido en Dispensador: " + MonEnDisp.getValor());
     }
 
+    public void addDesactivarBotonesListener(DesactivarBotonesListener listener) {
+        this.desactivarBotonesListener = listener;
+    }
 
+    public void removeDesactivarBotonesListener() {
+        this.desactivarBotonesListener = null;
+    }
 
 
 

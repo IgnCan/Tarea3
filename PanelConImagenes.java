@@ -56,31 +56,3 @@ public class PanelConImagenes{
         return I;
     }
 }
-
-//public class JLabelConImagen extends JFrame {
-//    public JLabelConImagen() {
-//        // Cargar la imagen desde un archivo (asegúrate de tener la ruta correcta)
-//        ImageIcon icono = new ImageIcon("ruta/de/la/imagen.jpg");
-//
-//        // Escalar la imagen si es necesario
-//        Image imagen = icono.getImage();
-//        Image nuevaImagen = imagen.getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH);
-//        icono = new ImageIcon(nuevaImagen);
-//
-//        // Crear el JLabel y establecer el ImageIcon
-//        JLabel label = new JLabel(icono);
-//
-//        // Agregar el JLabel al JFrame
-//        add(label);
-//
-//        // Configurar el JFrame
-//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        setSize(300, 300);
-//        setLocationRelativeTo(null);
-//        setVisible(true);
-//    }
-//
-//    public static void main(String[] args) {
-//        new JLabelConImagen();
-//    }
-//}

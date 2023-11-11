@@ -1,8 +1,10 @@
 
+import ExcepcionesPropias.NoHayProductoException;
+import ExcepcionesPropias.PagoIncorrectoException;
+import ExcepcionesPropias.PagoInsuficienteException;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Ventana extends JFrame {
 
@@ -37,15 +39,6 @@ public class Ventana extends JFrame {
         this.getContentPane().add(monedas);
 
 
-//        PanelDispensador dispensador = new PanelDispensador();
-//        this.getContentPane().add(dispensador);
-//
-//        PanelMonedas monedas = new PanelMonedas(dispensador);
-//        this.getContentPane().add(monedas);
-//
-//        PanelComprador comprador = new PanelComprador();
-//        this.getContentPane().add(comprador);
-
         // Establece las posiciones de los JPaneles
         add(monedas, BorderLayout.WEST);
         add(dispensador, BorderLayout.CENTER);
@@ -55,6 +48,16 @@ public class Ventana extends JFrame {
         monedas.setPreferredSize(new Dimension(300, 400));
         dispensador.setPreferredSize(new Dimension(400, 400));
         comprador.setPreferredSize(new Dimension(300, 400));
+
+        dispensador.addDesactivarBotonesListener(new DesactivarBotonesListener() {
+            @Override
+            public void desactivarBotones() {
+                // Desactivar todos los botones
+                monedas.mon100.setEnabled(true);
+                monedas.mon500.setEnabled(true);
+                monedas.mon1000.setEnabled(true);
+            }
+        });
 
 
     }

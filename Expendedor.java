@@ -1,3 +1,7 @@
+import ExcepcionesPropias.NoHayProductoException;
+import ExcepcionesPropias.PagoIncorrectoException;
+import ExcepcionesPropias.PagoInsuficienteException;
+
 class Expendedor{
 
 
@@ -54,7 +58,7 @@ class Expendedor{
 
 
     public void comprarProducto(Moneda m, int prod)
-            throws NoHayProductoException,PagoIncorrectoException, PagoInsuficienteException {
+            throws NoHayProductoException, PagoIncorrectoException, PagoInsuficienteException {
         if(m==null){
             throw new PagoIncorrectoException();
         }

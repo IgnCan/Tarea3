@@ -4,15 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelMonedas extends JPanel {
+
+    JButton mon100 = new Boton100peso();
+    JButton mon500 = new Boton500peso();
+    JButton mon1000 = new Boton1000peso();
+
+
+
     public Moneda m = null;
     public PanelMonedas(PanelDispensador dispensador){
         super();
         setBackground(Color.DARK_GRAY);
 
         //Aca se crea cada jBoton
-        JButton mon100 = new Boton100peso();
-        JButton mon500 = new Boton500peso();
-        JButton mon1000 = new Boton1000peso();
 
         mon100.addActionListener(new ActionListener() {
             @Override
@@ -27,6 +31,7 @@ public class PanelMonedas extends JPanel {
                 }
             }
         });
+
 
         mon500.addActionListener(new ActionListener() {
             @Override
@@ -56,6 +61,8 @@ public class PanelMonedas extends JPanel {
 
             }
         });
+
+
 
         //Aca defino una forma base para cada jBoton (cuadrado de 100x100)
         Dimension buttonSize = new Dimension(100, 100);
@@ -101,7 +108,9 @@ public class PanelMonedas extends JPanel {
             super();
             this.setText("100 peso");
 
+
         }
+
     }
 
     public class Boton500peso extends JButton {

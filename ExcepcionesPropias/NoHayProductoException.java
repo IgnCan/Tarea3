@@ -1,3 +1,5 @@
+package ExcepcionesPropias;
+
 public class NoHayProductoException extends Exception {
 
     public NoHayProductoException() {
