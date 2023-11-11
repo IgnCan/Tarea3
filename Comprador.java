@@ -3,11 +3,13 @@ class Comprador{
     private int vuelto;
     private Producto compraBuena = null;
 
+
     public Comprador(Moneda m, int queProducto, Expendedor exp)
             throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
 
         try {
-            Producto compra = exp.comprarProducto(m,queProducto);
+            exp.comprarProducto(m,queProducto);
+
             while (true) {
                 try {
                     vuelto = vuelto + exp.getVuelto().getValor();
@@ -15,9 +17,9 @@ class Comprador{
                     break;
                 }
             }
-//            compraBuena=exp.getProducto();
-//            sonido=compraBuena.bebercomer();
-            sonido=compra.bebercomer();
+            compraBuena=exp.getProducto();
+            sonido=compraBuena.bebercomer();
+//            sonido=compra.bebercomer();
         } catch (NoHayProductoException a){
             while (true) {
                 try {
@@ -26,7 +28,7 @@ class Comprador{
                     break;
                 }
             }
-            System.out.println(vuelto);
+            //System.out.println(vuelto);
             sonido=null;
             System.out.println("Error: " + a.getMessage());
 

@@ -9,7 +9,7 @@ public class PanelComprador extends JPanel {
     JLabel label= new JLabel("Aca va el producto");
     JLabel label3 = new JLabel("Aca va el vuelto");
 
-    public PanelComprador(){
+    public PanelComprador() {
         super();
         setBackground(Color.CYAN);
         setLayout(new GridBagLayout());

@@ -53,7 +53,7 @@ class Expendedor{
 
 
 
-    public Producto comprarProducto(Moneda m, int prod)
+    public void comprarProducto(Moneda m, int prod)
             throws NoHayProductoException,PagoIncorrectoException, PagoInsuficienteException {
         if(m==null){
             throw new PagoIncorrectoException();
@@ -66,11 +66,9 @@ class Expendedor{
                     for (int i = 1; i <= (m.getValor() - product.COCA.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
-
                     monCompra.add(m);
-//                    DepProd.add(coca.get());
-                    return coca.get();
-
+                    DepProd.add(coca.get());
+                    return;
 
                 } else if (coca.chequear()==0) {
                     monVu.add(m);
@@ -88,7 +86,8 @@ class Expendedor{
                     for (int i = 1; i <= (m.getValor() - product.SPRITE.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
-                    return sprite.get();
+                    DepProd.add(sprite.get());
+                    return;
 
                 } else if (sprite.chequear()==0) {
                     monVu.add(m);
@@ -105,7 +104,8 @@ class Expendedor{
                     for (int i = 1; i <= (m.getValor() - product.FANTA.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
-                    return fanta.get();
+                    DepProd.add(fanta.get());
+                    return;
                 } else if (fanta.chequear()==0) {
 
                     monVu.add(m);
@@ -122,7 +122,8 @@ class Expendedor{
                     for (int i = 1; i <= (m.getValor() - product.SUPER8.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
-                    return super8.get();
+                    DepProd.add(super8.get());
+                    return;
                 } else if (super8.chequear()==0) {
                     monVu.add(m);
                     throw new NoHayProductoException("NoHayProductoException, No queda producto, o n invalido");
@@ -138,7 +139,8 @@ class Expendedor{
                     for (int i = 1; i <= (m.getValor() - product.SNIKERS.getPresio()) / 100; i = i + 1) {
                         monVu.add(new Moneda100());
                     }
-                    return snikers.get();
+                    DepProd.add(snikers.get());
+                    return;
 
                 } else if (snikers.chequear()==0) { //caso moneda valida, pero cont vacio
                     monVu.add(m);

@@ -9,48 +9,54 @@ public class PanelDispensador extends JPanel  {
     Comprador c = null;
     private Expendedor exp = new Expendedor(1);
 
-    public PanelDispensador(PanelComprador comprador)  {
+    int prod;
+
+
+    JLabel label= new JLabel(String.valueOf(exp.cocaTamaño()));
+    JButton botoncoca = new botoncoca();
+    JLabel label2= new JLabel(String.valueOf(exp.spriteTamaño()));
+    JButton botonsprite = new JButton("Sprite");
+    JLabel label3= new JLabel(String.valueOf(exp.fantaTamaño()));
+    JButton botonfanta = new JButton("Fanta");
+    JLabel label4= new JLabel(String.valueOf(exp.super8Tamaño()));
+    JButton botonsuper8 = new JButton("Super8");
+    JLabel label5= new JLabel(String.valueOf(exp.snickersTamaño()));
+    JButton botonsnikers = new JButton("Snikers");
+    JLabel labelCompra = new JLabel("Aca sale la compra");
+    JLabel vuelto = new JLabel("De aca saldra el vuelto");
+
+    public PanelDispensador(PanelComprador comprador) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException  {
         super();
         setBackground(Color.PINK);
 
-        JLabel label= new JLabel(String.valueOf(exp.cocaTamaño()));
-        JButton botoncoca = new JButton("Cocacola");
-        JLabel label2= new JLabel(String.valueOf(exp.spriteTamaño()));
-        JButton botonsprite = new JButton("Sprite");
-        JLabel label3= new JLabel(String.valueOf(exp.fantaTamaño()));
-        JButton botonfanta = new JButton("Fanta");
-        JLabel label4= new JLabel(String.valueOf(exp.super8Tamaño()));
-        JButton botonsuper8 = new JButton("Super8");
-        JLabel label5= new JLabel(String.valueOf(exp.snickersTamaño()));
-        JButton botonsnikers = new JButton("Snikers");
-        JLabel labelCompra = new JLabel("Aca sale la compra");
-        JLabel vuelto = new JLabel("De aca saldra el vuelto");
+//        JLabel label= new JLabel(String.valueOf(exp.cocaTamaño()));
+//        JButton botoncoca = new botoncoca();
+//        JLabel label2= new JLabel(String.valueOf(exp.spriteTamaño()));
+//        JButton botonsprite = new JButton("Sprite");
+//        JLabel label3= new JLabel(String.valueOf(exp.fantaTamaño()));
+//        JButton botonfanta = new JButton("Fanta");
+//        JLabel label4= new JLabel(String.valueOf(exp.super8Tamaño()));
+//        JButton botonsuper8 = new JButton("Super8");
+//        JLabel label5= new JLabel(String.valueOf(exp.snickersTamaño()));
+//        JButton botonsnikers = new JButton("Snikers");
+//        JLabel labelCompra = new JLabel("Aca sale la compra");
+//        JLabel vuelto = new JLabel("De aca saldra el vuelto");
 
 
 
-        botoncoca.addActionListener(new ActionListener()  {
-            @Override
-            public void actionPerformed(ActionEvent e)  {
-                System.out.println("Apretaste el boton");
-    //            c = new Comprador(MonEnDisp, 1, exp);
-                try {
-                    c = new Comprador(MonEnDisp, 1, exp);
-                    System.out.println(c.queBebiste());
-                    label.setText(String.valueOf(exp.cocaTamaño()));
-                    vuelto.setText(exp.getVuelto().toString());
-
-
-//                    ActivarBotonesEvent event = new ActivarBotonesEvent(this);
-//                    Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(event);
-//                    PanelMonedas.Boton100peso.setEnabled(true);
-                } catch (NoHayProductoException | PagoInsuficienteException ex) {
-                    throw new RuntimeException(ex);
-                } catch (PagoIncorrectoException ex) {
-                    throw new RuntimeException(ex);}
-
-            }
-
-        });
+//        botoncoca.addActionListener(new ActionListener()  {
+//            @Override
+//            public void actionPerformed(ActionEvent e)  {
+//                System.out.println("Apretaste el boton");
+//                    c = new Comprador(MonEnDisp, 1, exp);
+//                    System.out.println(c.queBebiste());
+//                    label.setText(String.valueOf(exp.cocaTamaño()));
+//                    vuelto.setText(exp.getVuelto().toString());
+//
+//
+//            }
+//
+//        });
         botonsprite.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -223,6 +229,34 @@ public class PanelDispensador extends JPanel  {
         MonEnDisp=monEnviada;
         System.out.println("Objeto recibido en Dispensador: " + MonEnDisp.getValor());
     }
+
+    public class botoncoca extends JButton{
+        public botoncoca() {
+            super();
+            this.setText("CocaCola");
+            addActionListener(new ActionListener()  {
+                @Override
+                public void actionPerformed(ActionEvent e)    {
+                    System.out.println("Apretaste el boton");
+                    //c = new Comprador(MonEnDisp, 1, exp);
+                    //System.out.println(c.queBebiste());
+                    prod=1;
+                    label.setText(String.valueOf(exp.cocaTamaño()));
+                    vuelto.setText(exp.getVuelto().toString());
+                    //ejecutarCompra();
+
+
+                }
+
+            });
+
+        }
+    }
+
+    public void ejecutarCompra() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+        c= new Comprador(MonEnDisp,prod,exp);
+    }
+
 
 
 
