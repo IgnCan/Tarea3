@@ -41,7 +41,6 @@ class Comprador{
                 }
             }
             sonido=null;
-            System.out.println(vuelto);
             System.out.println("Error: " + b.getMessage());
         } catch (PagoIncorrectoException d){
             sonido=null;
