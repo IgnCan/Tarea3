@@ -37,8 +37,6 @@ public class PanelDispensador extends JPanel {
     private JButton botonsnikers = new JButton("Snikers : $500");
     private JLabel labelCompra = new JLabel("Compra");
     private JLabel vuelto = new JLabel("Vuelto");
-
-    private DelayedExecutionTimer accion;
     private ActivarBotonesListener activarBotonesListener;
 
     /**
