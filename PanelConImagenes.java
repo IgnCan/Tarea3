@@ -48,15 +48,13 @@ public class PanelConImagenes{
                 Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
                 I= new ImageIcon(nuevaImagen);
                 break;
-        } default:
+            } case "nulo":
                 I = new ImageIcon("Imagenes/blanco.jpeg");
                 Image imagen = I.getImage();
                 Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
-                I= new ImageIcon(nuevaImagen);
+                I = new ImageIcon(nuevaImagen);
                 break;
-
-
-      }
+        }
     }
     /**
      * Metodo que retorna el Icono que aparecera en PanelDispensador y PanelComprador al realizar una compra
