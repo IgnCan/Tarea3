@@ -26,7 +26,7 @@ public class Ventana extends JFrame {
         // Cierra el programa al cerrar la ventana
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        setTitle("Bonito Dispensador :D (estoy cansado jefe)");
+        setTitle("Panel Dispensador");
 
         //Crea el panel
         setLayout(new BorderLayout());
