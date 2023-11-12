@@ -245,6 +245,7 @@ public class PanelDispensador extends JPanel {
                     System.out.println("Producto con serie: "+ c.getProdSerie());
                     label5.setText(String.valueOf(exp.snickersTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
+                    labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
                     MonEnDisp = null;
                     if (activarBotonesListener != null) {
