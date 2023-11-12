@@ -38,7 +38,6 @@ public class PanelDispensador extends JPanel {
     private JLabel labelCompra = new JLabel("Compra");
     private JLabel vuelto = new JLabel("Vuelto");
 
-    private DelayedExecutionTimer accion;
     private ActivarBotonesListener activarBotonesListener;
 
     /**
@@ -51,7 +50,6 @@ public class PanelDispensador extends JPanel {
      */
     public PanelDispensador(PanelListener listener) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         super();
-        //DelayedExecutionTimer delayedExecutionTimer = new DelayedExecutionTimer(PanelListener::onObjectReceived, 2000);
 
         setBackground(Color.PINK);
 
