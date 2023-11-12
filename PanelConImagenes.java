@@ -24,7 +24,7 @@ public class PanelConImagenes{
             }
             case "sprite":{
 
-                I = new ImageIcon("jpg");
+                I = new ImageIcon("Imagenes/Sprite.jpg");
                 Image imagen = I.getImage();
                 Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
                 I= new ImageIcon(nuevaImagen);
