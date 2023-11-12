@@ -3,7 +3,7 @@ import java.util.ArrayList;
  * Clase Deposito, es la encargada de almacenar las monedas, bebidas y dulces en el Expendedor.
  * @param <E> objeto generico que sera determinado y contenido en el expendedor.
  */
-class Deposito<E> {
+public class Deposito<E> {
     private ArrayList<E> Lista;
     /**
      * Constructor, no recibe parametros y solo inicializa la Lista

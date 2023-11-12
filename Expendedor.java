@@ -6,7 +6,7 @@ import ExcepcionesPropias.PagoInsuficienteException;
  * Clase expendedor, es donde se recibe la moneda y el producto pedido, de ingresar valores correctos agrega el producto, la moneda con que le hizo la compra y el vuelto a sus depositos correspondientes
  * Tiene Arraylists para cada producto, vuelto, monedas de compra, y producto comprado
  */
-class Expendedor{
+public class Expendedor{
     private Deposito<Bebida> coca= new Deposito<>();
     private Deposito<Bebida> sprite= new Deposito<>();
     private Deposito<Bebida> fanta= new Deposito<>();

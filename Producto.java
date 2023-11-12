@@ -1,7 +1,7 @@
 /**
  *  Clase abstracta de producto, solo tienen como propiedad un numero de serie por definir.
  */
-abstract class Producto{
+public abstract class Producto{
     private final int serie;
     /**
      * Constructor, crea un producto.

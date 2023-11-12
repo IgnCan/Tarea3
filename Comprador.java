@@ -4,7 +4,7 @@ import ExcepcionesPropias.PagoInsuficienteException;
 /**
  * Clase comprador, es quien como su nombre lo indica ejecuta la compra.
  */
-class Comprador{
+public class Comprador{
     /**
      * String sonido - Que es el comprador diciendo que compro en caso de una compra exitosa.
      */
@@ -74,26 +74,30 @@ class Comprador{
         }
     }
     /**
-     * @return int vuelto total de la compra
+     * Metodo que retorna el vuelto total de la compra
+     * @return El vuelto total en un int
      */
     public int cuantoVuelto(){
         //System.out.println(vuelto);
         return vuelto;
     }
     /**
-     * @return retorna el sonido de que compró
+     * Retorna el sonido de que compró.
+     * @return que compro en un String
      */
     public String queBebiste(){
         return sonido;
     }
     /**
-     * @return retorna el producto que se obtuvo del proceso de compra.
+     * Retorna el producto que se obtuvo del proceso de compra.
+     * @return El objeto Producto
      */
     public Producto queCompra(){
         return compraBuena;
     }
     /**
-     * @return retorna la serie del producto.
+     * Retorna la serie del producto.
+     * @return Un int con la serie del producto
      */
     public String getProdSerie(){
         return ProdSerie;

@@ -1,7 +1,7 @@
 /**
  * Clase abstracta moneda, sirve para crear las que tienen valor definido.
  */
-abstract class Moneda{
+public abstract class Moneda{
     /**
      * Constructor de la clase asbtracta.
      */

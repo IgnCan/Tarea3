@@ -6,12 +6,23 @@ import java.awt.event.ActionListener;
 /**
  * Clase PanelMonedas, sublcase de JPanel, tiene 3 JButton para las monedas que se usaran en el panel, de $100, $500 y $1000 respectivamente.
  * Cada JBoton envia la moneda correspondiente a PanelDispensador por el metodo .recibirObjeto() y se desactiva para evitar meter mas monedas de las debidas en el dispensador.
- * Ademas tiene una moneda nula que sera redefinida y enviada al panel dispensador mas adelante.
  */
 public class PanelMonedas extends JPanel {
+    /**
+     * mon100 es el Boton100peso con ese valor.
+     */
     JButton mon100 = new Boton100peso();
+    /**
+     * mon500 es el Boton500peso con ese valor.
+     */
     JButton mon500 = new Boton500peso();
+    /**
+     * mon1000 es el Boton1000peso con ese valor.
+     */
     JButton mon1000 = new Boton1000peso();
+    /**
+     * Objeto Moneda nula que sera definida y enviada al PanelDispensador mas adelante.
+     */
     private Moneda m = null;
     /**
      * Constructor de la clase
