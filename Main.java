@@ -8,6 +8,9 @@ import ExcepcionesPropias.PagoInsuficienteException;
  * @see PanelDispensador para modificar la cantidad de productos iniciales
  */
 public class Main {
+    /**
+     * Aca se crea la ventana
+     */
     public static void main(String[] args) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Ventana v1 = new Ventana();
         v1.setVisible(true);

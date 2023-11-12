@@ -71,7 +71,7 @@ public class PanelDispensador extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
 
         //Da un especiado de 10p entre cada boton
-        gbc.insets = new Insets(0, 0, 0, 10);
+        gbc.insets = new Insets(15, 0, 0, 10);
 
         gbc.gridx = 0; // Columna 0
 

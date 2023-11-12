@@ -2,16 +2,24 @@ import ExcepcionesPropias.NoHayProductoException;
 import ExcepcionesPropias.PagoIncorrectoException;
 import ExcepcionesPropias.PagoInsuficienteException;
 /**
- * Clase comprador, es quien como su nombre lo indica ejecuta la compra, tiene las siguientes propiedades:
- * String sonido - Que es el comprador diciendo que compro en caso de una compra exitosa.
- * int vuelto - Que es el comprador diciendo cuanto vuelto obtuvo de su compra.
- * Producto compraBuena - Es el objeto Producto de la compra.
- * String ProdSerie -  Es la serie del producto.
+ * Clase comprador, es quien como su nombre lo indica ejecuta la compra.
  */
 class Comprador{
+    /**
+     * String sonido - Que es el comprador diciendo que compro en caso de una compra exitosa.
+     */
     private String sonido;
+    /**
+     * int vuelto - Que es el comprador diciendo cuanto vuelto obtuvo de su compra.
+     */
     private int vuelto;
+    /**
+     * Producto compraBuena - Es el objeto Producto de la compra.
+     */
     private Producto compraBuena = null;
+    /**
+     * String ProdSerie -  Es la serie del producto.
+     */
     private String ProdSerie;
     /**
      * Constructor del comprador, aca es donde se ejecuta la compra.
