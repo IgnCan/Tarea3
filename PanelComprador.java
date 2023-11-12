@@ -58,7 +58,7 @@ public class PanelComprador extends JPanel implements PanelListener {
             PanelConImagenes pp = new PanelConImagenes(Compra.queBebiste(),100);
             label.setIcon(pp.getIcon());
         } catch (Exception a) {
-
+            
         }
         label3.setText(String.valueOf(Compra.cuantoVuelto()));
         System.out.println("*************Objeto recibido en comprador: " + objeto.cuantoVuelto());
