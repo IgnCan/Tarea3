@@ -57,7 +57,7 @@ public class Expendedor{
      */
     public Expendedor(int numProductos){
 
-        for (int i =0;i<numProductos;i=i+1){
+        for (int i =1;i<numProductos+1;i=i+1){
             coca.add(new CocaCola(1*i));
             sprite.add(new Sprite(2*i));
             fanta.add(new Fanta(3*i));

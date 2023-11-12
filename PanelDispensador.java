@@ -162,10 +162,9 @@ public class PanelDispensador extends JPanel {
         botoncoca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Apretaste el boton");
                 try {
                     c = new Comprador(MonEnDisp, 1, exp);
-                    System.out.println(c.getProdSerie());
+                    System.out.println("Producto con serie: "+ c.getProdSerie());
                     label.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
@@ -182,10 +181,9 @@ public class PanelDispensador extends JPanel {
         botonsprite.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Sprite");
                 try {
                     c = new Comprador(MonEnDisp, 2, exp);
-                    System.out.println(c.getProdSerie());
+                    System.out.println("Producto con serie: "+ c.getProdSerie());
                     label2.setText(String.valueOf(exp.spriteTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
@@ -201,10 +199,9 @@ public class PanelDispensador extends JPanel {
         botonfanta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Fanta");
                 try {
                     c = new Comprador(MonEnDisp, 3, exp);
-                    System.out.println(c.getProdSerie());
+                    System.out.println("Producto con serie: "+ c.getProdSerie());
                     label3.setText(String.valueOf(exp.fantaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
@@ -220,10 +217,9 @@ public class PanelDispensador extends JPanel {
         botonsuper8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Super8");
                 try {
                     c = new Comprador(MonEnDisp, 4, exp);
-                    System.out.println(c.getProdSerie());
+                    System.out.println("Producto con serie: "+ c.getProdSerie());
                     label4.setText(String.valueOf(exp.super8Tamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
@@ -239,10 +235,9 @@ public class PanelDispensador extends JPanel {
         botonsnikers.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Snikers");
                 try {
                     c = new Comprador(MonEnDisp, 5, exp);
-                    System.out.println(c.getProdSerie());
+                    System.out.println("Producto con serie: "+ c.getProdSerie());
                     label5.setText(String.valueOf(exp.snickersTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     panelListener.onObjectReceived(c);
@@ -263,7 +258,7 @@ public class PanelDispensador extends JPanel {
      */
     public void recibirObjeto(Moneda monEnviada) {
         MonEnDisp = monEnviada;
-        System.out.println("Objeto recibido en Dispensador: " + MonEnDisp.getValor());
+
     }
     /**
      * Metodo que escucha cuando un JBoton de este panel fue presionado y reactiva los botones del PanelMonedas

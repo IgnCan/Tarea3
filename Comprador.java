@@ -44,7 +44,7 @@ public class Comprador{
             }
             compraBuena=exp.getProducto();
             sonido=compraBuena.bebercomer();
-            ProdSerie= String.valueOf(compraBuena.getSerie());
+            ProdSerie = String.valueOf(compraBuena.getSerie());
         } catch (NoHayProductoException a){
             while (true) {
                 try {
