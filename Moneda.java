@@ -1,22 +1,30 @@
+import java.util.Random;
+
 /**
  * Clase abstracta moneda, sirve para crear las que tienen valor definido.
  */
 public abstract class Moneda{
+    private int serie;
+
     /**
      * Constructor de la clase asbtracta.
      */
     public Moneda(){
+        Random random = new Random();
+        serie = random.nextInt(Integer.MAX_VALUE) + 1;
     }
     /**
      * Lector de serie de la moneda.
      */
-    public Moneda getSerie(){
-        return this;
+    public int getSerie(){
+        return serie;
     }
     /**
      * Metodo abstracto que retorna el valor de la moneda.
      */
     public abstract int getValor();
+
+
 }
 /**
  * Clase hija de Moneda, esta tiene un valor concreto de 100.

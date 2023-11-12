@@ -36,6 +36,7 @@ public class PanelMonedas extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 m = new Moneda100();
+                System.out.println("Has enviado una moneda con numero de serie: "+ m.getSerie());
                 dispensador.recibirObjeto(m);
                 for (Component component : getComponents()) {
                     if (component instanceof JButton) {
@@ -48,6 +49,7 @@ public class PanelMonedas extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 m = new Moneda500();
+                System.out.println("Has enviado una moneda con numero de serie: "+ m.getSerie());
                 dispensador.recibirObjeto(m);
                 for (Component component : getComponents()) {
                     if (component instanceof JButton) {
@@ -60,6 +62,7 @@ public class PanelMonedas extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 m = new Moneda1000();
+                System.out.println("Has enviado una moneda con numero de serie: "+ m.getSerie());
                 dispensador.recibirObjeto(m);
                 for (Component component : getComponents()) {
                     if (component instanceof JButton) {
