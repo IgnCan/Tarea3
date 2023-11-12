@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 public class PanelDispensador extends JPanel {
     private Moneda MonEnDisp = null;
     private Comprador c = null;
-    private Expendedor exp = new Expendedor(1);
+    private Expendedor exp = new Expendedor(3);
     private PanelListener panelListener;
     private JLabel label = new JLabel(String.valueOf(exp.cocaTamaño()));
     private JLabel labelc=new JLabel(new PanelConImagenes("cocacola",50).getIcon());
@@ -169,11 +169,13 @@ public class PanelDispensador extends JPanel {
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
+                    MonEnDisp = null;
                     if (activarBotonesListener != null) {
                         activarBotonesListener.activarBotones();
                     }
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
+
                 }
             }
 
@@ -188,6 +190,7 @@ public class PanelDispensador extends JPanel {
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
+                    MonEnDisp = null;
                     if (activarBotonesListener != null) {
                         activarBotonesListener.activarBotones();
                     }
@@ -206,6 +209,7 @@ public class PanelDispensador extends JPanel {
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
+                    MonEnDisp = null;
                     if (activarBotonesListener != null) {
                         activarBotonesListener.activarBotones();
                     }
@@ -224,6 +228,7 @@ public class PanelDispensador extends JPanel {
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
                     panelListener.onObjectReceived(c);
+                    MonEnDisp = null;
                     if (activarBotonesListener != null) {
                         activarBotonesListener.activarBotones();
                     }
@@ -241,17 +246,15 @@ public class PanelDispensador extends JPanel {
                     label5.setText(String.valueOf(exp.snickersTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     panelListener.onObjectReceived(c);
+                    MonEnDisp = null;
                     if (activarBotonesListener != null) {
                         activarBotonesListener.activarBotones();
                     }
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
-
                 }
             }
         });
-
-
     }
     /**
      * Recibe el objeto enviado desde PanelMonedas, asi puede ser ingresado al dispensador.
