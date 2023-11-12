@@ -246,6 +246,7 @@ public class PanelDispensador extends JPanel {
                     }
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
+
                 }
             }
         });
