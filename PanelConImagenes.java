@@ -53,6 +53,7 @@ public class PanelConImagenes{
                 Image imagen = I.getImage();
                 Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
                 I= new ImageIcon(nuevaImagen);
+                break;
 
 
       }
