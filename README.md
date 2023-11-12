@@ -5,7 +5,6 @@
 
 [Uploading Tarea03.vpd…]()
  
-EstaSi
 
 # Tarea3
 
