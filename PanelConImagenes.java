@@ -49,6 +49,10 @@ public class PanelConImagenes{
                 I= new ImageIcon(nuevaImagen);
                 break;
         } default:
+                I = new ImageIcon("Imagenes/blanco.jpeg");
+                Image imagen = I.getImage();
+                Image nuevaImagen = imagen.getScaledInstance(b, b, java.awt.Image.SCALE_SMOOTH);
+                I= new ImageIcon(nuevaImagen);
 
 
       }
