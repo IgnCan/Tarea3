@@ -37,6 +37,8 @@ public class PanelDispensador extends JPanel {
     private JButton botonsnikers = new JButton("Snikers : $500");
     private JLabel labelCompra = new JLabel("Compra");
     private JLabel vuelto = new JLabel("Vuelto");
+
+    private DelayedExecutionTimer accion;
     private ActivarBotonesListener activarBotonesListener;
 
     /**
@@ -49,6 +51,8 @@ public class PanelDispensador extends JPanel {
      */
     public PanelDispensador(PanelListener listener) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         super();
+        //DelayedExecutionTimer delayedExecutionTimer = new DelayedExecutionTimer(PanelListener::onObjectReceived, 2000);
+
         setBackground(Color.PINK);
 
         //Aca defino una forma base para cada jBoton de 100x60
@@ -159,6 +163,7 @@ public class PanelDispensador extends JPanel {
         vuelto.setPreferredSize(labelSize);
 
         this.panelListener = listener;
+
         botoncoca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -168,14 +173,24 @@ public class PanelDispensador extends JPanel {
                     label.setText(String.valueOf(exp.cocaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
-                    panelListener.onObjectReceived(c);
-                    MonEnDisp = null;
-                    if (activarBotonesListener != null) {
-                        activarBotonesListener.activarBotones();
-                    }
+                    Timer timer = new Timer(2000, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent evt) {
+                            MonEnDisp = null;
+                            panelListener.onObjectReceived(c);
+                            vuelto.setText("");
+                            labelCompra.setText("");
+                            if (activarBotonesListener != null) {
+                                activarBotonesListener.activarBotones();
+                            }
+                            ((Timer) evt.getSource()).stop();
+                        }
+                    });
+                    timer.setRepeats(false); // Evitar que el temporizador se repita
+                    timer.start();
+
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
-
                 }
             }
 
@@ -189,11 +204,21 @@ public class PanelDispensador extends JPanel {
                     label2.setText(String.valueOf(exp.spriteTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
-                    panelListener.onObjectReceived(c);
-                    MonEnDisp = null;
-                    if (activarBotonesListener != null) {
-                        activarBotonesListener.activarBotones();
-                    }
+                    Timer timer = new Timer(2000, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent evt) {
+                            MonEnDisp = null;
+                            panelListener.onObjectReceived(c);
+                            vuelto.setText("");
+                            labelCompra.setText("");
+                            if (activarBotonesListener != null) {
+                                activarBotonesListener.activarBotones();
+                            }
+                            ((Timer) evt.getSource()).stop();
+                        }
+                    });
+                    timer.setRepeats(false); // Evitar que el temporizador se repita
+                    timer.start();
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -208,11 +233,21 @@ public class PanelDispensador extends JPanel {
                     label3.setText(String.valueOf(exp.fantaTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
-                    panelListener.onObjectReceived(c);
-                    MonEnDisp = null;
-                    if (activarBotonesListener != null) {
-                        activarBotonesListener.activarBotones();
-                    }
+                    Timer timer = new Timer(2000, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent evt) {
+                            MonEnDisp = null;
+                            panelListener.onObjectReceived(c);
+                            vuelto.setText("");
+                            labelCompra.setText("");
+                            if (activarBotonesListener != null) {
+                                activarBotonesListener.activarBotones();
+                            }
+                            ((Timer) evt.getSource()).stop();
+                        }
+                    });
+                    timer.setRepeats(false); // Evitar que el temporizador se repita
+                    timer.start();
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -227,11 +262,21 @@ public class PanelDispensador extends JPanel {
                     label4.setText(String.valueOf(exp.super8Tamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
-                    panelListener.onObjectReceived(c);
-                    MonEnDisp = null;
-                    if (activarBotonesListener != null) {
-                        activarBotonesListener.activarBotones();
-                    }
+                    Timer timer = new Timer(2000, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent evt) {
+                            MonEnDisp = null;
+                            panelListener.onObjectReceived(c);
+                            vuelto.setText("");
+                            labelCompra.setText("");
+                            if (activarBotonesListener != null) {
+                                activarBotonesListener.activarBotones();
+                            }
+                            ((Timer) evt.getSource()).stop();
+                        }
+                    });
+                    timer.setRepeats(false); // Evitar que el temporizador se repita
+                    timer.start();
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -246,11 +291,21 @@ public class PanelDispensador extends JPanel {
                     label5.setText(String.valueOf(exp.snickersTamaño()));
                     vuelto.setText(String.valueOf(c.cuantoVuelto()));
                     labelCompra.setText(c.queBebiste());
-                    panelListener.onObjectReceived(c);
-                    MonEnDisp = null;
-                    if (activarBotonesListener != null) {
-                        activarBotonesListener.activarBotones();
-                    }
+                    Timer timer = new Timer(2000, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent evt) {
+                            MonEnDisp = null;
+                            panelListener.onObjectReceived(c);
+                            vuelto.setText("");
+                            labelCompra.setText("");
+                            if (activarBotonesListener != null) {
+                                activarBotonesListener.activarBotones();
+                            }
+                            ((Timer) evt.getSource()).stop();
+                        }
+                    });
+                    timer.setRepeats(false); // Evitar que el temporizador se repita
+                    timer.start();
                 } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
